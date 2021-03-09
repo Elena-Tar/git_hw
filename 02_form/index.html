@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h2>Form elements</h2>
+    </header>
+    <main class="form">
+        <form action="/" method="POST" enctype="multipart/form-data" id="my_form"
+            onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+            <div class="general_data">
+                <h3>Общие данные</h3>
+                <label for="locked_field">Заблокированное поле</label>
+                <input type="text" name="locked_field" id="locked_field" value="Меня нельзя менять!" disabled>
+                <br>
+                <label for="text"> Какой-то текст</label>
+                <input type="text" name="text" id="text" value="Меня только читать" readonly>
+                <br>
+                <label for="name">Имя питомца *</label>
+                <input type="text" name="name" id="name" placeholder="Введите имя" value="" required>
+                <br>
+                <label for="email">Ваш email</label>
+                <input type="email" name="email" id="email" placeholder="Введите email" required>
+                <br>
+                <label for="psw">Секретный пароль</label>
+                <input type="password" name="psw" id="psw" placeholder="Введите пароль">
+                <br>
+                <label for="birthday">Дата рождения Пушкина А.С.</label>
+                <input type="date" name="birthday" id="birthday">
+                <br>
+                <label for="age">Возраст дерева возле дома</label>
+                <input type="number" name="age" id="age">
+                <br>
+
+                <label>Ваш пол</label>
+                <!--for="gender"-->
+                <input type="radio" name="gender" value="parquet" id="parquet">
+                <label for="parquet">Паркет</label>
+                <input type="radio" name="gender" value="laminate" id="laminate">
+                <label for="laminate">Ламинат</label>
+                <input type="radio" name="gender" value="carpet" id="carpet">
+                <label for="carpet">Ковролин</label>
+                <br>
+
+                <label>Социальные сети</label>
+                <!-- не могу label связать со всеми импутами одновременно-->
+                <input type="checkbox" name="social_network[]" value="facebook" id="facebook">
+                <label for="facebook">Лицо книга</label> <!-- <label> связан с id-->
+
+                <input type="checkbox" name="social_network[]" value="twitter" id="twitter">
+                <label for="twitter">Птичка</label>
+
+                <input type="checkbox" name="social_network[]" value="instagram" id="instagram">
+                <label for="instagram">Инста</label>
+
+                <input type="checkbox" name="social_network[]" value="VK" id="VK">
+                <!--если в id название соц сети нужно писать большими буквами или нет разницы?-->
+                <label for="VK">Вк-шечка</label>
+
+                <input type="checkbox" name="social_network[]" value="linkedln" id="linkedln">
+                <label for="linkedln">Linkedln</label>
+
+                <input type="checkbox" name="social_network[]" value="tumblr" id="tumblr">
+                <label for="tumblr">Тумблер</label>
+
+            </div>
+            <div class="other_information">
+                <h3>Другая информация</h3>
+                <label for="color">Любимый цвет соседа</label>
+                <input type="color" name="color" id="color">
+                <br>
+                <label for="phone">Телефон поддержки front-end разработчика</label>
+                <input type="tel" name="phone" id="phone">
+                <br>
+                <label for="lesson_time">Время следующего занятия</label>
+                <input type="time" name="lesson_time" id="lesson_time">
+                <br>
+                <label for="web_site">Ссылка на любимый сайт</label>
+                <input type="url" name="web_site" id="web_site">
+                <br>
+                <label for="number">Число от 1 до 10</label>
+                <input type="range" name="number" id="number" max="10" min="1">
+                <br>
+                <label for="file">Поделись картинкой</label>
+                <input type="file" name="file" id="file"><br>
+
+            </div>
+            <div class="other">
+                <h3>Не input-ы</h3>
+                <label for="drink">Любимые напитки</label>
+                <select name="drink" id="drink">
+                    <option value="">_=Выберите напиток=_</option>
+                    <optgroup label="Безалкогольные">
+                        <option value="tea">Чай</option>
+                        <option value="coffee">Кофе</option>
+                        <option value="compote">Компот</option>
+                        <option value="juice">Сок</option>
+                    </optgroup>
+                    <optgroup label="Бухлишко">
+                        <option value="beer">Пиво</option>
+                        <option value="wine">Вино</option>
+                        <option value="rum">Ром</option>
+                        <option value="cognac">Коньяк</option>
+                        <option value="tequila">Текила</option>
+                    </optgroup>
+                </select>
+                <br>
+                <br>
+                <label for="goods">Любимые напитки</label>
+                <select name="goods[]" id="goods" multiple size="5">
+                    <optgroup label="Безалкогольные">
+                        <option value="tea">Чай</option>
+                        <option value="coffee">Кофе</option>
+                        <option value="compote">Компот</option>
+                        <option value="juice">Сок</option>
+                    </optgroup>
+                    <optgroup label="Бухлишко">
+                        <option value="beer">Пиво</option>
+                        <option value="wine">Вино</option>
+                        <option value="rum">Ром</option>
+                        <option value="cognac">Коньяк</option>
+                        <option value="tequila">Текила</option>
+                    </optgroup>
+                </select>
+                <br>
+                <br>
+                <label for="comments">Комментарий на свободную тему</label>
+                <textarea name="comments" id="comments" rows="6" cols="50"
+                    placeholder="Введите комментарий "></textarea>
+            </div>
+            <div class="button">
+                <h3>Кнопочки</h3>
+                <button type="submit">Отправить</button>
+                <button type="reset">Сбросить</button>
+                <button type="button">Просто кнопка</button>
+                <button disabled>Заблокирована:(</button>
+            </div>
+        </form>
+
+    </main>
+
+</body>
+
+</html>
