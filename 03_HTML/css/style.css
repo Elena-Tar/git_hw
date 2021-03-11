@@ -1,0 +1,172 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:#fff; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.container {
+    width: 90%;   /*не прилипал к краям экрана*/
+    max-width: 1082px;  /*ограничение чтобы контейнер не растягивался max-width не больше 1200*/
+    margin: 0 auto;  /*выравниваем контейнер по центру*/
+}
+
+.title {
+    width: 813px;
+    height: 100px;
+    margin: 0 auto;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    background: url('../img/banner.jpg') 100% 100%;  
+    background-size: cover;
+}
+
+.header_top {
+    background-color: #343434;
+}
+
+span {
+    margin-left: 10px;
+    letter-spacing: -2px;  /*расстояние между буквами*/
+}
+
+.header_bottom {
+    border-right: 1px solid #A7D211;  
+    background: -moz-linear-gradient(90deg, #8EAB1D 0%, #ACDA15 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ACDA15), color-stop(100%, #8EAB1D)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(90deg, #8EAB1D 0%, #ACDA15 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(90deg, #8EAB1D 0%, #ACDA15 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(90deg, #8EAB1D 0%, #ACDA15 100%); /* ie10+ */
+    background: linear-gradient(0deg, #8EAB1D 0%, #ACDA15 100%); /* w3c */;
+    width: 75.14%;
+    float: left;
+}
+
+.header_menu {
+    list-style: none;  
+    border-left: 1px solid #A7D211; 
+}
+
+.header_menu li {
+    display: inline-block; 
+    border-right: 1px solid #A7D211;  
+    
+}
+
+.header_menu li a {
+    display: inline-block;
+    height: 22px;    /*чтобы ссылка занимала всю высоту блока*/
+    line-height: 22px; /*межстрочный интервал (выравниваем по центру)*/
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.column_1, .column_2 {
+    width: 12.43%;
+    float: left;
+    background: -moz-linear-gradient(90deg, #8EAB1D 0%, #ACDA15 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ACDA15), color-stop(100%, #8EAB1D)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(90deg, #8EAB1D 0%, #ACDA15 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(90deg, #8EAB1D 0%, #ACDA15 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(90deg, #8EAB1D 0%, #ACDA15 100%); /* ie10+ */
+    background: linear-gradient(0deg, #8EAB1D 0%, #ACDA15 100%); /* w3c */;
+    height: 22px; 
+}
+
+/*===main==*/
+
+
+.column_3, .column_4 {
+    width: 12.43%;
+    float: left;
+    background-color: #EEEEEE;
+    height: 545px;
+     
+}
+
+.content {
+    float: left;
+    width: 75.14%;
+    background-color: #fff;   
+}
+
+.text {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+main li {
+    margin-bottom: 3px;
+}
+
+h2 {
+    padding-top: 16px;
+    margin: 0 10px;
+    color: #5E6872;
+    border-bottom: 1px solid #A7B46E;
+}
+
+.section_changes ul, .section_design ul {
+    padding-top: 15px;
+    padding-left: 45px;   
+}
+
+.section_changes p, .section_design p {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.section_header_one p {
+    padding-top: 17px;
+    padding-left: 20px;
+}
+
+.footer {
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    padding-right: 10px;
+    text-align: right;
+    margin-top: 30px;
+    background: -moz-linear-gradient(90deg, #91B90B 0%, #9FBC3E 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9FBC3E), color-stop(100%, #91B90B)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(90deg, #91B90B 0%, #9FBC3E 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(90deg, #91B90B 0%, #9FBC3E 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(90deg, #91B90B 0%, #9FBC3E 100%); /* ie10+ */
+    background: linear-gradient(0deg, #91B90B 0%, #9FBC3E 100%); /* w3c */;   
+}
+
+main a {
+    color: #46816D;
+    text-decoration: none;
+}
+
+.fon {
+    background-color: #EEEEEE;
+    height: 15px;
+    width: 90%;  
+    max-width: 1082px;
+    margin: 0 auto;
+}
+
+.content {
+    border-left: 2px solid #BABABA;
+    border-right: 2px solid #BABABA;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
