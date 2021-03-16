@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('../fonts/ProximaNova-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('../fonts/ProximaNova-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #1a0000;
+    font-size: 12px;
+    font-family: 'ProximaNova', sans-serif;
+   
+}
+
+.container {
+    max-width: 940px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content ul {
+    list-style: none;
+    padding-top: 55px;
+    padding-bottom: 65px;
+    margin: 0 -5px;
+}
+
+.content li {
+    display: inline-block;
+    width: 33.3333%;
+    margin: 0 -2px;
+    text-align: center;    
+}
+.icon {
+    display: inline-block;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    border: 1px solid #1275b9;
+    background-color:  #1275b9;
+    background-image: url('../img/sprite.png');
+    background-repeat: no-repeat;
+}
+
+.icon:hover {
+    background-color: #fff;
+}
+
+.icon_tablet {
+    background-position: 18px 15px;
+}
+
+ .icon_tablet:hover {
+    background-position: 18px -65px;
+}
+
+.icon_tablet_2 {
+    background-position: -182px 15px;
+}
+
+.icon_tablet_2:hover {
+    background-position: -182px -65px;
+}
+
+.icon_tablet_3 {
+    background-position: -371px 15px;
+}
+
+.icon_tablet_3:hover {
+    background-position: -371px -65px;
+}
+
+h3 {
+    padding-top: 14px;
+    letter-spacing: 1px;
+}
+
+p {
+    padding: 15px 50px;
+    font-size: 14px;
+}
