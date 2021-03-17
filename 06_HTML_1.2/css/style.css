@@ -13,8 +13,8 @@ body {
 
 .container {
     width: 90%;
+    max-width: 800px;
     margin: 0 auto;
-    width: 800px;
 }
 
 header {
@@ -23,60 +23,69 @@ header {
     background-color: #4a4f56; 
     padding-top: 40px;
     padding-bottom: 25px;
+    margin-bottom: 40px;
 }
 
-.my_checkbox ul {
-    list-style: none;
-    padding: 40px 0;
+.my_checkbox label{ 
+    padding: 20px 10px;
 }
 
-.my_checkbox ul li {
+.my_checkbox {
+    position: relative;
+}
+
+.my_checkbox .checkmark {
+    width: 40px;
+    height: 40px;
+    margin: 10px 30px 10px 10px;
+    background-color: #eee;
+    display: inline-block;
+    vertical-align: middle;         /*чтобы выровнять текст по вертикали display: inline-block; */
+    vertical-align: middle;
+}
+
+.my_checkbox .checkmark::after {
+    content: '';                                /* на спан повесили галочку*/ 
+    display: block;
+    width: 20px;
+    height: 10px;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    transform: rotate(-45deg);
+    margin: 8px;
+}
+.my_checkbox input{
+    position: absolute;                                      /*скрыли импут*/ 
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    z-index:1;
+}
+
+.my_checkbox input:checked + .checkmark::after {   
+    border-color: #000;                     /*т.к. стилизация галочки transparent, то при нажатии задаем цвет*/ 
+}
+
+/*---продолжаем веселье---*/
+.my_checkbox {
     background-color: #88839e;
-    padding-left: 10px;
+    border: 2px solid transparent;
 }
 
-.my_checkbox ul li:nth-child(2n){
+.my_checkbox:nth-child(2n) {
     background-color: #7a7593;
 }
 
-
-.my_checkbox input {                  /*скрываем input*/
-    position: absolute;
-    z-index: 1;
-    opacity: 0;          /*прозрачность*/
-}
-
-.my_checkbox label {                       /*если я ставлю высоту и ширину в input и label у меня пропадает текст*/
-    display: inline-block;
-    padding: 10px;
-}
-
-.my_checkbox label::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #fff;
-    background-color: aliceblue;
-    margin-right: 20px;
-}
-
-.my_checkbox input:checked + label::before {
-    background-color: red;
-}
-
-.my_checkbox ul li:hover {
+.my_checkbox:hover {
     background-color: #625e77;
     border-top: 2px solid #fff; 
     border-bottom: 2px solid #fff; 
 }
 
-.my_checkbox ul li:active {
+.my_checkbox:active {
     background-color: #eb7e7f;   
-}
-
-.my_checkbox input:checked + label {
-    text-decoration:line-through;
 }
 
 #bot_1 {        
@@ -86,30 +95,39 @@ header {
     background-color: #4a4f56 ;
     color: #eb7e78 ;
     text-align: center;
-    border: 2px solid transparent ;
-}
-
-.pickles::after {
-    content: '( for the next lessons about CSS )';
-}
-
-.apples::after {
-    content: '( for more CSS manipulations )';
-}
-
-.oranges::after {
-    content: '( becouse they are awesome )';
-}
-
-.plates::after {
-    content: '(hm... they always disappear)';
-}
-
-.bottle::after {
-    content: '( for my friends )';
+    border: 2px solid transparent;
+    margin-top: 30px;
 }
 
 
+.text_1::after {
+    content: ' ( for the next lessons about CSS )';
+    font-size: 10px;
+}
+
+.text_2::after {
+    content: ' ( for more CSS manipulations)';
+    font-size: 10px;
+}
+
+.text_3::after {
+    content: ' ( becouse they are awesome )';
+    font-size: 10px;
+}
+
+.text_4::after {
+    content: ' (hm... they always disappear)';
+    font-size: 10px;
+}
+
+.text_5::after {
+    content: ' ( for my friends )';
+    font-size: 10px;
+}
+
+.my_checkbox input:checked ~ span {
+    text-decoration: line-through;
+}
 
 #top, #bottom, #left, #right {  
 	background: #fff;
@@ -144,6 +162,12 @@ header {
     bottom: 0; 
     height: 20px;
 }
+
+
+
+
+
+
 
 
 
