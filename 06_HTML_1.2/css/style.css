@@ -40,12 +40,11 @@ header {
     margin: 10px 30px 10px 10px;
     background-color: #eee;
     display: inline-block;
-    vertical-align: middle;         /*чтобы выровнять текст по вертикали display: inline-block; */
-    vertical-align: middle;
+    vertical-align: middle;         
 }
 
 .my_checkbox .checkmark::after {
-    content: '';                                /* на спан повесили галочку*/ 
+    content: '';                               
     display: block;
     width: 20px;
     height: 10px;
@@ -55,7 +54,7 @@ header {
     margin: 8px;
 }
 .my_checkbox input{
-    position: absolute;                                      /*скрыли импут*/ 
+    position: absolute;                                      
     left: 0;
     top: 0;
     width: 40px;
@@ -65,10 +64,10 @@ header {
 }
 
 .my_checkbox input:checked + .checkmark::after {   
-    border-color: #000;                     /*т.к. стилизация галочки transparent, то при нажатии задаем цвет*/ 
+    border-color: #000;                     
 }
 
-/*---продолжаем веселье---*/
+
 .my_checkbox {
     background-color: #88839e;
     border: 2px solid transparent;
