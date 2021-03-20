@@ -60,13 +60,15 @@
     font-size: 40px;
     padding-top: 6px;
     margin-bottom: 20px;
+    opacity: .9;
 }
 
 .wi-sunrise {
     font-size: 30px;
+    opacity: 1;
 }
 
- span{
+span{
      display: inline-block;
      font-size: 24px;
      opacity: .4;
@@ -76,7 +78,7 @@
 .text {
     margin-top: 36px;
     font-size: 22px;
-    color: #fff;
+    opacity: 1;
 }
 
  .lisbon, .san_francisco {
@@ -144,7 +146,7 @@ ul:hover > li:hover {
     opacity: 1;
 }
 
-/*
+
 ul:hover li:not(:hover) {
     opacity: 0.5;
-}*/
+}
