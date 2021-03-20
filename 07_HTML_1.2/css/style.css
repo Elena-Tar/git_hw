@@ -146,7 +146,7 @@ ul:hover > li:hover {
     opacity: 1;
 }
 
-
+/*
 ul:hover li:not(:hover) {
     opacity: 0.5;
-}
+}*/
