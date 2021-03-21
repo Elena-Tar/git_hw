@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Hans Kendriek';
+    src: url('../font/HansKendrick-Regular.woff2') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e2e7ec; 
+    font-family: 'Hans Kendriek';
+    text-transform: uppercase;
+}
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 90px;
+}
+
+
+.col {
+    display: flex;
+    flex-direction: column;              /*теперь по вертикали*/
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 360px;
+    height: 544px;
+    margin-bottom: 20px;
+}
+
+.car {
+    display: flex;
+    padding: 44px 60px 30px 44px;   
+    width: 740px;
+    background-image: url('../img/1.png');
+    background-size: cover;    /*Масштабирует изображение*/
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-end;
+}
+
+.col_name_car {
+    font-weight: 900;         /*Black*/
+    font-size: 30px;
+    color: #818181;         
+    padding-right: 90px;
+    letter-spacing: 1.2px;
+}
+
+.date_car{
+    color: #818181;
+    font-size: 13px;
+    font-weight: 500;                  /*medium*/
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.col_text {
+    display: flex;
+    padding: 24px;
+    background-color: #fff;
+    flex-grow: 1;
+    flex-direction: column;              
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.date {
+    color: #818181;  
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    flex-grow: .2;    
+}
+
+.col_name {
+    color: #1d1d1d;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    flex-grow: 0.8;
+    letter-spacing: 1.5px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    color: #99a5b0;
+    margin-bottom: 100px;
+}
+
+.loading_img{
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    padding-top: 55px;
+    padding-right: 5px;
+}
+
+.loading_text{
+    font-size: 13px;
+    font-weight: 900;    
+    padding-left: 5px;
+    padding-top: 60px;
+}
+
+
+
+
