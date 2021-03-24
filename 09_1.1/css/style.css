@@ -69,14 +69,14 @@ p:nth-child(5){
     padding: 20px 0px;
     margin-right: 20px;
     font-size: 60px;
-    font-style: oblique;
+    font-style: italic;
     float: left;    
 }
 
 .sp_2 {
     display: inline-block;
     font-size: 24px;
-    font-style: oblique;   /*наклон*/
+    font-style: italic;   /*наклон*/
     padding-top:38px;
     letter-spacing: 1.3px;
 }
@@ -92,6 +92,7 @@ p:nth-child(5){
     font-weight: 700;
     letter-spacing: 4px;
     font-size: 18px;
+    cursor:pointer;
 }
 .discover:hover {
     background-color: rgb(223, 156, 156);

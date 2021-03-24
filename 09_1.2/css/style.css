@@ -42,7 +42,7 @@ body {
     flex-direction: column;
     align-items:flex-end;
     position: fixed;
-    width: 62%;
+    width: 68%;
     height: 258px;
     right: 0;
     top: 50px;
@@ -51,28 +51,34 @@ body {
 .title_search {
     background-color: #181818;
     width: 100%;
-    height: 184px;
-    font-family: 'PlayfairDisplay';
+    height: 188px;
+    /* font-family: 'PlayfairDisplay'; */
+    position: relative;
 }
 
-label {  /*ok*/
+label {  
     display: block;
-    color: #777777;
+    color: #767676;
     text-transform: uppercase;
     font-size: 15px;
     font-family: 'Proxima-nova-regular';
     margin-left: 65px;
-    margin-top: 50px;
+    margin-top: 44px;
     letter-spacing: 4px;
+  
 }
 
 input {
     font-family: 'PlayfairDisplay';
     font-size: 48px;
     color: #fefefe;
-    background-color: #181818; /* Цвет фона */
+    background-color: #181818; 
     margin-left: 65px;
-   width: 800px;
+    width: 800px;
+    border:none;
+    border-bottom:1px solid #303030;
+    position: absolute;
+    bottom: 63px;
 }
 
 input,textarea {
@@ -80,28 +86,34 @@ input,textarea {
 }
 
 
-.title_yellow {
+.control_bar {
     display: flex;
-    background-color: #fac02d;
+    background-color: #fbc02d;
     height: 74px;
-    width: 96%;
+    width: 94%;
     right: 0;
 }
 
 ul {
     display: flex;
     list-style: none;
+    padding-left: 40px;
 }
 
 li {
-    width: 80px;
+    width: 58px;
     height: 70px;
+    position: relative;
 }
 a {
+    display: inline-block;
     color:#fefefe;
-    font-size: 40px;   /*фотошоп 48px*/
-    padding-left: 15px;
-    opacity: 0.6;
+    font-size: 38px;   
+    opacity: 0.5;
+   position: absolute;
+    bottom: 6px;
+    cursor:pointer;
+    
 }
 
 a:hover {
@@ -118,6 +130,7 @@ a:hover {
 .content {
     display: flex;
     background-color: #fff;
+    box-shadow: 0 3px 5px #303a3f;
 }
 
 .content_text {
@@ -131,43 +144,47 @@ a:hover {
 }
 
 
-h2 {  /*ок*/
+h2 {  
     color: #b4b4b4;
     font-size: 19.84px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    font-family:'PlayfairDisplay';
+    font-family:'Proxima-nova-regular';
     padding-top: 5px;
-    padding-bottom: 20px;
+    
+ 
 }
 
-.my_t {     /*ок*/
+.my_t {    
     font-size: 77.93px;
     color: #2a2a2a;
     text-transform: uppercase;
     font-family: 'Futura PT';
     letter-spacing: 4px;  
+    padding-top: 20px;
 }
 
 .my_span {                  /*как его поднять?*/
     font-size: 30px;
     color:#8f8f8f;
-    font-style: oblique;
-    font-weight: normal;
-    font-family: 'Proxima-nova-regular';
+    font-style: italic;
+    font-family: 'Futura PT';
     font-weight: 300;
     margin-bottom: 18px;
+    position: relative;
+    top: -12px;
 }
 
-.text_oblique {
-    font-style: oblique;
+.text_italic {
+    font-style: italic;
 }
 p {
     font-size:26.92px ;
     color: #000;
-    font-family: 'PlayfairDisplay';   /*фотошоп пишет Georgia*/
-    padding-top: 20px;
-    padding-bottom: 0px;
+    font-family: 'Proxima-nova-regular';  
+    padding-top: 22px;
     line-height: 40px;
+    font-weight: 300;
 }
 
+wbr { display: inline-block; }
