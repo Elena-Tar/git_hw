@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a class="header__logo-link" href="#">
+                    <img class="header__logo-pic" src="img/logo.png" alt="">
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="main_product product">
+                <div class="product__gallery">
+                    <div class="gallery__main-pic gallery">
+                        <img class="gallery__pic" src="img/Nike-SB-Stefan-Janoski-Max.png" alt="">
+                    </div>
+                    <div class="gallery__preview">
+                        <div class="gallery__item">
+                            <input class="gallery__input" type="radio" name="option" id="radio1" checked />
+                            <label class="gallery__label gallery__label--violet" for="radio1"></label>
+                        </div>
+                        <div class="gallery__item">
+                            <input class="gallery__input" type="radio" name="option" id="radio2" />
+                            <label class="gallery__label gallery__label--white" for="radio2"></label>
+                        </div>
+                        <div class="gallery__item">
+                            <input class="gallery__input" type="radio" name="option" id="radio3" />
+                            <label class="gallery__label gallery__label--red" for="radio3"></label>
+                        </div>
+                        <div class="gallery__item">
+                            <input class="gallery__input" type="radio" name="option" id="radio4" />
+                            <label class="gallery__label gallery__label--blue" for="radio4"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="product__info">
+                    <div class="product__model">
+                        <h3 class="product__model-name">Nike SB Stefan Janoski Max</h3>
+                        <h4 class="product__model-nameDescription">Unisex Skateboarding Shoe</h4>
+                    </div>
+
+                    <div class="product_raiting">
+                        <!--
+                          --><input class="raiting__input" name="stars" id="e5" type="radio"><label
+                            class="raiting__label" for="e5">★</label>
+                        <!--
+                                --><input class="raiting__input" name="stars" id="e4" type="radio"><label
+                            class="raiting__label" for="e4">★</label>
+                        <!--
+                                --><input class="raiting__input" name="stars" id="e3" type="radio"><label
+                            class="raiting__label" for="e3">★</label>
+                        <!--
+                                --><input class="raiting__input" name="stars" id="e2" type="radio"><label
+                            class="raiting__label" for="e2">★</label>
+                        <!--
+                                --><input class="raiting__input" name="stars" id="e1" type="radio"><label
+                            class="raiting__label" for="e1">★</label>
+                    </div>
+
+                    <div class="product__character character">
+                        <select class="character-select" name="ex_month" id="ex_month">
+                            <option value="" disabled selected> Size </option>
+                            <option value="8">8</option>
+                            <option value="10">10</option>
+                        </select>
+                        <select class="character-select" name="ex_year" id="ex_year">
+                            <option value="" disabled selected> Qty </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="product__button">
+                        <button class="button">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
