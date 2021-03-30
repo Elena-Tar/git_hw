@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+  background-color: #e5eeee;
+  background-image: url('../img/Vector\ Smart\ Object.png');
+  background-repeat: no-repeat;
+  background-position: center top 50px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body::after{
+    content: '';
+    display: block;
+    box-shadow: 3px 0 7px rgba(0, 0, 0, .35);   
+    width: 400px;
+    height: 496px;
+    position: absolute; 
+    left: 50%;
+    top: 50px;
+    margin-left: -200px;
+    z-index: -1;
+} 
+
+.container {
+    width: 90%;
+    max-width: 262px;
+    margin: 0 auto;
+}
+
+.wrap_form {
+    background-size: 100%;
+    margin-top: 52px;
+
+}
+
+.title {
+    list-style: none;
+    display: flex;
+    padding: 47px 0 50px;
+}
+
+.title a {
+    font-weight: 700px;
+    font-size: 18px;
+    color: #fbf6e4;
+    padding-right: 24px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+ 
+.title a:hover::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #e66a64;
+}
+
+
+label{
+    font-weight: 700px;
+    font-size: 16px;
+    color: #fbf6e4;
+}
+
+.username, .password {                            
+    height: 43px;
+    width: 100%;
+    margin: 8px 0 12px;
+    background-color: transparent;
+    border: 2px solid #9883c6;
+}
+
+.password {                            
+    margin: 8px 0 16px;
+}
+
+
+.my_checkbox {
+    position: relative;
+}
+
+.my_checkbox .checkmark {
+    width: 16px;
+    height: 16px;
+    background-color: #23ae92;
+    display: inline-block;
+    vertical-align: middle;         /*чтобы выровнять текст по вертикали display: inline-block; */
+}
+
+.my_checkbox .checkmark::after {
+    content: '';                                /* на спан повесили галочку*/ 
+    display: block;
+    width: 6px;
+    height: 4px;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    transform: rotate(-45deg);
+    margin: 3px;
+}
+
+.my_checkbox input{
+    position: absolute;                                      /*скрыли импут*/ 
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    z-index:1;
+}
+
+.my_checkbox input:checked + .checkmark::after {   
+    border-color: #fff;                                    
+}
+
+.my_checkbox label {
+    font-size: 13px;
+    color: #fbf6e4;
+}
+
+.button_sign_in {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    background-color: #23ae92;
+    margin-top: 34px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fbf6e4;
+    text-align: center;
+}
+
+.button_sign_in a{
+    font-weight: 700;
+    font-size: 18px;
+    color: #fbf6e4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button_sign_in:hover {
+    background-color: #229a82;
+    border: 2px solid #9883c6;
+}
+
+.link {
+    display: flex;
+    justify-content:space-between;
+}
+
+.link a {
+    font-weight: 400;
+    font-size: 13px;
+    color: #b9b9cc;
+    text-decoration: none;
+    border-bottom: 1px solid #453db4;
+}

@@ -1,0 +1,3 @@
+$(function () {
+    $("#psw").mask('aaaaa');
+})
