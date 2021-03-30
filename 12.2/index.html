@@ -6,55 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="section_contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>For new projects, ideas, business or anything
-                you'd like to discuss, contact with me!</p>
-            <main class="main">
-                <div class="form_wrap">
-                    <form action="#" method="POST" enctype="multipart/form-data" id="my_form">
-                        <input type="text" name="name" id="name" placeholder="Your name" required>
-                        <input type="email" name="email" id="email" placeholder="Your email" required>
-                        <input type="tel" name="phone" id="phone" placeholder="Your phone number" required>
-                        <textarea name="comments" id="comments" placeholder="Your message..."></textarea>
+    <div class="container">
+        <div class="wrap_form">
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <ul class="title">
+                    <li class="sign"><a href="#">Sign in</a></li>
+                    <li class="join"><a href="#">Join us</a></li>
+                </ul>
 
-                        <div class="button_send_data"><a class="send_data" href="#">send data</a></div>
-                    </form>
-                </div>
-                <div class="address_data">
-                    <dl>
-                        <dt>ADDRESS</dt>
-                        <dd><a href="#">123 City name, Street, City, Country</a></dd>
-                        <dt>EMAIL</dt>
-                        <dd><a href="#">cahee@domain.com</a></dd>
-                        <dt>PHONE</dt>
-                        <dd><a href="#">+012 345 6789</a></dd>
-                    </dl>
-                </div>
-            </main>
+                <label for="name">Username</label>
+                <input class="username" type="text" name="name" id="name" required>
 
+                <label for="psw">Password</label>
+                <input class="password" type="password" name="psw" id="psw" required>
+
+                <div class="my_checkbox">
+                    <label for="ch_3">
+                        <input type="checkbox" name="ch_3" value="oranges" id="ch_3">
+                        <span class="checkmark"></span>
+                        <span class="text_3">Keep me signed in</span>
+                    </label>
+                </div>
+
+                <button class="button_sign_in" type="submit"> Sign in</button>
+
+                <div class="link">
+                    <a href="#">Forgot password</a>
+                    <a href="#">Create an account</a>
+                </div>
+
+            </form>
         </div>
     </div>
-    <footer>
-        <div class="container">
-            <div class="wrap_footer">
-                <div class="text">© 2015 Company. All right reserved.</div>
-                <div class="logo">
-                    <img src="img/logo-small.png" alt="#">
-                </div>
-                <div class="note">Made with <span class="text_pink">love</span> by Auskteez</div>
-            </div>
-        </div>
-    </footer>
-
-
 
 
 
