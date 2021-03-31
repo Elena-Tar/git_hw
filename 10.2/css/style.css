@@ -1,26 +1,24 @@
-﻿@font-face {
-   font-family: 'Font Awesome';
-   src: url('../font/Font\ Awesome\ 5\ Free-Regular-400.woff2');
-   font-weight: 400;
-   font-display: swap;
-}
+@font-face {
+	font-family: 'Font Awesome';
+	src: url('../font/Font\ Awesome\ 5\ Free-Regular-400.woff2');
+	font-weight: 400;
+	font-display: swap;
+ }
 
 * {
     margin: 0;
-    padding: 0;
+    bottom: 0;
     box-sizing: border-box;
-}
-html, body {
-    height: 100%;
-    width: 100%;
-}
-body {
-    background-color: #f6f6f6;
 }
 
 html, body {
     width: 100%;
     height: 100%;
+}
+
+body {
+    background-color: #f6f6f6;
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -29,125 +27,143 @@ html, body {
     margin: 0 auto;
 }
 
-.content {
-    background-color: #f6f6f6;
-    padding-top: 100px;
-}
 h2 {
+	padding-top: 100px;
     text-align: center;
     font-size: 34px;
-    font-family: 'Lato', sans-serif;
     font-weight: 700;
     color: #3c3c3c;
     text-transform: uppercase;
-    letter-spacing: 3.8px;
+    letter-spacing: 5px;
 }
 
 .line {
     text-align: center;
+	padding-top: 4px;	
 }
 
-h3 {
+p {
     display: block;
     text-align: center;
     font-size: 16px;
-    font-family: 'Lato', sans-serif;
     font-weight: 300;
     color:  #3c3c3c;
-    margin-bottom: 30px;
+    margin-bottom: 58px;
     margin-top: 30px; 
-    padding: 0 280px;  
-    line-height: 24px;              /*дефис*/
-}
-/***1я часть*/
-
-
-.business_card {
-    display: flex;
-    justify-content: space-between;    
-    position: absolute;
-    top: 295px;
+    padding: 0 270px;  
+    line-height: 24px;            
 }
 
-.block {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding-bottom: 130px; 
-    margin: 0 15px;
+
+.container_flex{
+	display: flex;
+	justify-content: space-between;
+}
+.front_img, .back_img {
+	width: 270px;
+	height: 270px;
 }
 
-.business_card .block .kartinka {
-    width: 270px;
-    height: 270px;
-    transition: all 3s ease;
-    z-index: 2;
+ul {
+	margin: 0;
+	padding: 0;
 }
+
+ul li {
+	margin: 0;
+	padding: 0;
+} 
 
 .data {
-    width: 100%;
-    position: relative;   
-    top: 19px;
+	position: absolute;
+	top: 286px;
+	left: 0;
 }
 
-.block .name {
-    font-family: 'Lato', sans-serif;
+.name {
     font-weight:bold;
     font-size: 18px;
 }
-.block .profession {
-    font-family: 'Lato', sans-serif;
+
+.profession {
     font-weight: 300;
     font-size: 14px;
 }
 
-/****** 2я часть*/
+/* entire container, keeps perspective (весь контейнер, сохраняет перспективу)*/
+.flip-container {
+	perspective: 1000px;
+	list-style: none;
+	position: relative;
+}
+/* flip the pane when hovered (переворачивать панель при наведении курсора)*/
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
 
-.soc_network{
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 295px;
+.flip-container, .front, .back {
+	width: 270px;
+	height: 270px;
 }
 
+/* flip speed goes here (здесь идет скорость переворота) */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
 
-.soc_network .block .kartinka  {
-    display: flex;
+/* hide back of pane during swap (скрыть заднюю часть панели во время обмена)*/
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* front pane, placed above back (передняя панель, размещенная над задней) */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane(назад, изначально скрытая панель) */
+.back {
+	transform: rotateY(180deg);
+}
+
+/******/
+.back_img{
+	display: flex;
     justify-content: center;
     align-items: center; 
     list-style: none;
     width: 270px;
     height: 270px;
     background-color: #18b5dc;  
-    transition: all 3s ease;
-  
 }
 
-ul li {
-    width: 42px;
+.back_img li{
+	width: 42px;
     height: 42px;
     background-color: #5ecbe7;
     color: #fff;
     margin: 2px;
 }
-ul li a {
-    display: flex;
+
+.back_img li a {
+	display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
 }
 
-ul li a svg {
-    max-height: 24px;
+.back_img li a svg {
+	max-height: 24px;
     max-width: 24px;
     fill: #fff;
 }
-
-.kartinka:hover {
-    transform: rotateY(180deg); 
-    backface-visibility: hidden; /*скрыли зад-ю часть*/
-    z-index: 1;
-} 
-
-
