@@ -167,3 +167,7 @@ ul li {
     max-width: 24px;
     fill: #fff;
 }
+
+.back_img li:hover{
+    background-color: #0f738c;
+}
