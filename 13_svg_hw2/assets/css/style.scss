@@ -47,6 +47,7 @@ body {
         font-size: 15px;
         line-height: 30px;
         letter-spacing: 1px;
+        margin-right: 0;
     }
 
     .mouse {
@@ -425,18 +426,19 @@ footer {
     .section3 .content .title::after {
         display: none;
 
-        .section5 .flex .long,
-        .section5 .flex .short {
-            width: calc(50% - (20px / 2)); //не работает
-        }
     }
 
-    @media screen and (max-width:600px) {
-
-        .section5 .flex .long,
-        .section5 .flex .short {
-            width: 100%;
-        }
-
+    .section5 .flex .long,
+    .section5 .flex .short {
+        width: calc(50% - 5px);
     }
+}
+
+@media screen and (max-width:600px) {
+
+    .section5 .flex .long,
+    .section5 .flex .short {
+        width: 100%;
+    }
+
 }
