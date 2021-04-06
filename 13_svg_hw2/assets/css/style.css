@@ -1,0 +1,398 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section1 {
+  background-image: url("../img/hero-bg.jpg.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-bottom: 114px;
+  color: #fff;
+}
+.section1 .icon {
+  padding-top: 286px;
+  margin-bottom: 80px;
+}
+.section1 h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 54px;
+  letter-spacing: 9px;
+}
+.section1 p {
+  text-transform: uppercase;
+  font-weight: 15;
+  padding-bottom: 236px;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.section1 .mouse {
+  margin: 0 auto;
+  display: block;
+  height: 40px;
+  width: 24px;
+  background: transparent;
+  border: 3px solid #fff;
+  position: relative;
+  border-radius: 12px;
+}
+.section1 .mouse::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 5px;
+  left: 7.5px;
+}
+
+.section2 {
+  background: #fff;
+  padding-top: 160px;
+  padding-bottom: 156px;
+  color: #3c3c3c;
+  text-align: center;
+}
+.section2 .content {
+  border: 1px solid #3c3c3c;
+  padding-top: 40px;
+  padding-bottom: 24px;
+  position: relative;
+}
+.section2 .content .title {
+  position: absolute;
+  top: -24px;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 1;
+  background: #fff;
+}
+.section2 .content .title h2 {
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 106px;
+  letter-spacing: 5px;
+}
+.section2 .content p {
+  padding-top: 26px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.section3 {
+  background-image: url("../img/services.jpg.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 130px;
+  padding-bottom: 108px;
+  color: #fff;
+  text-align: center;
+}
+.section3 .content {
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid #fff;
+  padding-top: 70px;
+  padding-bottom: 30px;
+  position: relative;
+}
+.section3 .content .title {
+  position: absolute;
+  top: -21px;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 1;
+}
+.section3 .content .title::before, .section3 .content .title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 246px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+}
+.section3 .content .title::before {
+  left: -246px;
+}
+.section3 .content .title::after {
+  right: -246px;
+}
+.section3 .content .title h2 {
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 106px;
+  letter-spacing: 5px;
+}
+.section3 .content p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+  letter-spacing: 0.2px;
+}
+
+.section4 {
+  background: #fff;
+  padding-top: 120px;
+  padding-bottom: 40px;
+  color: #3c3c3c;
+  text-align: center;
+}
+.section4 .content {
+  border: 1px solid #3c3c3c;
+  padding-top: 18px;
+  padding-bottom: 84px;
+  position: relative;
+}
+.section4 .content .title {
+  position: absolute;
+  top: -20px;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 1;
+  background: #fff;
+}
+.section4 .content .title h2 {
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 70px;
+  letter-spacing: 5px;
+}
+.section4 .content .icon_design {
+  margin-top: 106px;
+  margin-bottom: 36px;
+}
+.section4 .content .icon_dev {
+  margin-top: 106px;
+  margin-bottom: 32px;
+}
+.section4 .content .icon_product_management {
+  margin-top: 92px;
+  margin-bottom: 40px;
+}
+.section4 .content a {
+  cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 26px;
+  text-decoration: none;
+  color: #3c3c3c;
+}
+.section4 .content a:hover {
+  font-size: 24px;
+  border: 1px solid #3c3c3c;
+}
+.section4 .content .product_management {
+  margin-bottom: 36px;
+}
+.section4 .content p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0.1px;
+}
+
+.section5 {
+  padding-top: 74px;
+  padding-bottom: 40px;
+}
+.section5 .flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.section5 .flex .long {
+  width: calc(((100% * 800) / 1920) - 20px / 3);
+  height: 236px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.section5 .flex .long img {
+  width: 100%;
+  height: 100%;
+}
+.section5 .flex .long a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 34px;
+  font-weight: 700;
+  position: absolute;
+  padding-left: 60px;
+  bottom: 40px;
+  left: 0;
+  transform: scale(1);
+}
+.section5 .flex .long a:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.section5 .flex .short {
+  width: calc((100% - ((100% * 800) / 1920)) /2 - 20px / 3);
+  height: 236px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.section5 .flex .short img {
+  width: 100%;
+  height: 100%;
+}
+.section5 .flex .short a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 34px;
+  font-weight: 700;
+  position: absolute;
+  padding-left: 60px;
+  bottom: 40px;
+  left: 0;
+  transform: scale(1);
+}
+.section5 .flex .short a:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.section6 {
+  background: #fff;
+  padding-top: 90px;
+  font-family: "Lato", sans-serif;
+  color: #3c3c3c;
+  text-align: center;
+}
+.section6 .content {
+  border: 1px solid #3c3c3c;
+  padding-top: 68px;
+  padding-bottom: 46px;
+  position: relative;
+}
+.section6 .content .title {
+  position: absolute;
+  top: -12px;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 1;
+  background: #fff;
+  font-size: 30px;
+  font-weight: 700;
+}
+.section6 .content .title h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 106px;
+  letter-spacing: 5px;
+}
+.section6 .content p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.1px;
+  margin-bottom: 44px;
+}
+.section6 .content button {
+  width: 396px;
+  height: 60px;
+  background-color: #3c3c3c;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transform: scale(1);
+}
+.section6 .content button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+footer {
+  padding-top: 32px;
+  padding-bottom: 50px;
+  text-align: center;
+  position: relative;
+}
+footer .icon_footer {
+  display: block;
+  position: relative;
+  right: 150px;
+  top: 30px;
+}
+footer p {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  color: #3c3c3c;
+  letter-spacing: 0.5px;
+  padding-left: 70px;
+}
+
+@media screen and (max-width: 1000px) {
+  .section3 .content {
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+  }
+
+  .section3 .content .title::before,
+.section3 .content .title::after {
+    display: none;
+  }
+  .section3 .content .title::before .section5 .flex .long,
+.section3 .content .title::before .section5 .flex .short,
+.section3 .content .title::after .section5 .flex .long,
+.section3 .content .title::after .section5 .flex .short {
+    width: calc(50% - (20px / 2));
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 600px) {
+  .section5 .flex .long,
+.section5 .flex .short {
+    width: 100%;
+  }
+}
