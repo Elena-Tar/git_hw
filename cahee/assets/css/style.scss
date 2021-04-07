@@ -25,7 +25,11 @@ $border_blue:#355b82;
 $bgc_input:#00c4c4;
 $pinc_text:#ff2b58;
 
-
+body {
+    font-size: calc(12px + (26 - 14) * ((100vw - 375px) / (1920 - 375)));
+    line-height: calc(18px + (32 - 16) * ((100vw - 375px)/(1920 - 375)));
+    font-family: 'Raleway', sans-serif;
+}
 
 .container {
     width: 90%;
@@ -147,7 +151,6 @@ header {
 
             h2 {
                 padding-top: 350px;
-                font-family: 'Raleway', sans-serif;
                 font-weight: 900;
                 font-size: 60px;
                 color: $grey_text;
@@ -159,7 +162,6 @@ header {
                 width: 370px;
                 text-align: justify;
                 margin-bottom: 26px;
-                font-family: 'Raleway', sans-serif;
                 font-weight: 300;
                 line-height: 27px;
             }
@@ -237,7 +239,6 @@ header {
                 padding-bottom: 214px;
 
                 h2 {
-                    font-family: 'Raleway', sans-serif;
                     font-weight: 700;
                     font-size: 90px;
                     color: $white_text;
@@ -245,7 +246,6 @@ header {
 
                 p {
                     display: block;
-                    font-family: 'Raleway', sans-serif;
                     font-weight: 300;
                     font-size: 17px;
                     color: $white_text;
@@ -261,7 +261,7 @@ header {
 
 .section_services {
     background-color: $bgc_light_blue;
-    font-family: 'Raleway', sans-serif;
+
 
     .bgimg {
         background-image: url('../img/img.png');
@@ -360,7 +360,6 @@ header {
 
 .section_gallery {
     background-color: $bgc_yellow;
-    font-family: 'Raleway', sans-serif;
     text-align: center;
     color: $grey_text;
     padding-bottom: 120px;
@@ -451,7 +450,6 @@ header {
 .section_subscribe {
     padding-top: 130px;
     padding-bottom: 162px;
-    font-family: 'Raleway', sans-serif;
     background-color: $bgc_white;
     color: $grey_text;
     background-image: url('../img/subsctibe.png');
@@ -512,7 +510,6 @@ header {
 }
 
 .section_blog {
-    font-family: 'Raleway', sans-serif;
     background-color: $bgc_light_purple;
     color: $white_text;
     padding-bottom: 118px;
@@ -528,8 +525,6 @@ header {
         padding-top: 24px;
         font-size: 17px;
         font-weight: 300;
-        // padding-left: 300px;
-        // padding-right: 300px;
         line-height: 24px;
         text-align: center;
     }
@@ -663,7 +658,6 @@ header {
     background-image: url('../img/form_bg.png');
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Raleway', sans-serif;
     text-align: center;
     color: $grey_text;
 
