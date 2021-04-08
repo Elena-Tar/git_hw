@@ -145,7 +145,7 @@ header {
         background-image: url('../img/1img.png');
         background-position: right -20px top;
         background-repeat: no-repeat;
-        font-size: cover;
+        // font-size: cover;
         padding-bottom: 66px;
 
 
@@ -1052,7 +1052,7 @@ footer {
 
 /***/
 
-@media screen and (max-width:420px) {
+@media screen and (max-width:750px) {
     .section_fresh_life .bgimg {
         background-position: right -300px top -100px;
         padding-bottom: 15px;
