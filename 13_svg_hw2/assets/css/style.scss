@@ -17,18 +17,17 @@ body {
 }
 
 
-
 .section1 {
+    padding-top: 286px;
+    padding-bottom: 114px;
     background-image: url('../img/hero-bg.jpg.png');
     background-position: right top;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    padding-bottom: 114px;
     color: $fff_color;
 
     .icon {
-        padding-top: 286px;
         margin-bottom: 80px;
     }
 
@@ -133,6 +132,21 @@ body {
         padding-bottom: 30px;
         position: relative;
 
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            height: 1px;
+            width: calc((100% * 246) / 900);
+            background-color: $fff_color;
+            position: absolute;
+            top: 0;
+        }
+
+        &::after {
+            left: calc((100% * 654) / 900);
+        }
+
 
         .title {
             position: absolute;
@@ -140,25 +154,6 @@ body {
             right: 50%;
             transform: translateX(50%);
             z-index: 1;
-
-            &::before,
-            &::after {
-                content: '';
-                display: block;
-                height: 1px;
-                width: 246px;
-                background-color: $fff_color;
-                position: absolute;
-                top: 50%;
-            }
-
-            &::before {
-                left: -246px;
-            }
-
-            &::after {
-                right: -246px;
-            }
 
             h2 {
                 font-size: 34px;
@@ -185,11 +180,16 @@ body {
     color: $grey_color;
     text-align: center;
 
+
     .content {
         border: 1px solid $grey_color;
         padding-top: 18px;
         padding-bottom: 84px;
         position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
 
         .title {
             position: absolute;
@@ -211,16 +211,38 @@ body {
         .icon_design {
             margin-top: 106px;
             margin-bottom: 36px;
+            width: 80px;
+            height: 80px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+
         }
 
         .icon_dev {
             margin-top: 106px;
             margin-bottom: 32px;
+            width: 80px;
+            height: 80px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         .icon_product_management {
             margin-top: 92px;
             margin-bottom: 40px;
+            width: 80px;
+            height: 90px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         a {
@@ -372,7 +394,8 @@ body {
         }
 
         button {
-            width: 396px;
+            width: 90%;
+            max-width: 400px;
             height: 60px;
             background-color: $grey_color;
             font-weight: 400;
@@ -391,54 +414,144 @@ body {
     }
 }
 
+
 footer {
-    padding-top: 32px;
+    padding-top: 62px;
     padding-bottom: 50px;
-    text-align: center;
-    position: relative;
 
-    .icon_footer {
-        display: block;
-        position: relative;
-        right: 150px;
-        top: 30px;
-    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
-    p {
-        display: inline-block;
-        font-weight: 400;
-        font-size: 14px;
-        color: $grey_color;
-        letter-spacing: 0.5px;
-        padding-left: 70px;
+        .icon_footer {
+            display: block;
+        }
+
+        p {
+            display: inline-block;
+            font-weight: 400;
+            font-size: 14px;
+            color: $grey_color;
+            padding: 10px;
+            text-align: center;
+        }
     }
 }
 
 
 @media screen and (max-width:1000px) {
-    .section3 .content {
-        border-right: none;
-        border-bottom: none;
-        border-left: none;
-    }
-
-    .section3 .content .title::before,
-    .section3 .content .title::after {
-        display: none;
-
-    }
 
     .section5 .flex .long,
     .section5 .flex .short {
         width: calc(50% - 5px);
     }
+
 }
 
 @media screen and (max-width:600px) {
+    .section1 {
+        padding-top: 200px;
+        padding-bottom: 60px;
+    }
+
+    .section1 h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .section1 p {
+        font-size: 16;
+        padding-bottom: 136px;
+
+    }
+}
+
+@media screen and (max-width:600px) {
+    .section2 {
+        padding-top: 90px;
+        padding-bottom: 80px;
+    }
+
+    .section2 .content .title h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .section3 {
+        padding-top: 90px;
+        padding-bottom: 80px;
+    }
+
+    .section3 .content .title h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .section4 {
+        padding-top: 90px;
+        padding-bottom: 80px;
+    }
+
+
+    .section4 .content a {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .section4 .content .title h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .section5 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
 
     .section5 .flex .long,
     .section5 .flex .short {
         width: 100%;
     }
 
+
+    .section5 .flex .long a,
+    .section5 .flex .short a {
+        padding-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+@media screen and (max-width:600px) {
+    .section6 {
+        padding-top: 90px;
+        padding-bottom: 0px;
+    }
+
+    .section6 .content .title h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 0 30px;
+    }
+}
+
+
+@media screen and (max-width:400px) {
+    footer {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
 }
