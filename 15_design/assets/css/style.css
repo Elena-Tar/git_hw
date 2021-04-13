@@ -92,6 +92,8 @@ body {
   padding-top: 40px;
   padding-bottom: 24px;
   position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .section2 .content .title {
   position: absolute;
@@ -134,6 +136,8 @@ body {
   padding-top: 70px;
   padding-bottom: 30px;
   position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .section3 .content::before, .section3 .content::after {
   content: "";
@@ -180,6 +184,12 @@ body {
   padding-top: 18px;
   padding-bottom: 84px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .section4 .content .title {
   position: absolute;
@@ -199,14 +209,32 @@ body {
 .section4 .content .icon_design {
   margin-top: 106px;
   margin-bottom: 36px;
+  width: 80px;
+  height: 80px;
+}
+.section4 .content .icon_design svg {
+  width: 100%;
+  height: 100%;
 }
 .section4 .content .icon_dev {
   margin-top: 106px;
   margin-bottom: 32px;
+  width: 80px;
+  height: 80px;
+}
+.section4 .content .icon_dev svg {
+  width: 100%;
+  height: 100%;
 }
 .section4 .content .icon_product_management {
   margin-top: 92px;
   margin-bottom: 40px;
+  width: 80px;
+  height: 90px;
+}
+.section4 .content .icon_product_management svg {
+  width: 100%;
+  height: 100%;
 }
 .section4 .content a {
   cursor: pointer;
@@ -250,6 +278,7 @@ body {
 .section5 .flex .long img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .section5 .flex .long a {
   text-decoration: none;
@@ -276,6 +305,7 @@ body {
 .section5 .flex .short img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .section5 .flex .short a {
   text-decoration: none;
@@ -306,6 +336,8 @@ body {
   padding-top: 68px;
   padding-bottom: 46px;
   position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .section6 .content .title {
   position: absolute;
