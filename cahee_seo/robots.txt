@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://elena-tar.github.io/git_hw/cahee_seo/sitemap.html
+Sitemap: https://elena-tar.github.io/git_hw/cahee_seo/sitemap.xml
 Host: elena-tar.github.io
