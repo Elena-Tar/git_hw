@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhromaon</title>
+    <meta name="description" content="Safe travel anywhere">
+    <link rel="stylesheet" href="assets/css/style_icon.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="7 days"/>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bhromaon" />
+    <meta property="og:description" content="Safe travel anywhere" />
+    <!-- <meta property="og:url" content="https://elena-tar.github.io/git_hw/cahee_seo" /> -->
+    <!-- <meta property="og:image" content="https://elena-tar.github.io/git_hw/cahee_seo/assets/img/2copi.png" /> -->
+
+    <meta name="twitter:title" content="Bhromaon">
+    <meta name="twitter:description" content="Safe travel anywhere">
+    <!-- <meta name="twitter:url" content="https://elena-tar.github.io/git_hw/cahee_seo" /> -->
+    <!-- <meta name="twitter:image" content="https://elena-tar.github.io/git_hw/cahee_seo/assets/img/2copi.png"> -->
+
+
+
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <script>
+        function setViewport(){
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
+                let ww=(window.innerWidth<window.screen.width)?window.innerWidth:window.screen.width,
+                    mw=360,      //не работает у меня((
+                    ratio=ww/mw;
+                if(ww<mw){
+                    document.querySelector('[name="viewport"]').setAttribute('content', 'initial-scale='+ratio+', maximum-scale='+ratio+', minimum-scale='+ratio+', user-scalable=yes, width='+ww);
+                }else{
+                    document.querySelector('[name="viewport"]').setAttribute('content', 'initial-scale=1.0, maximum-scale=2, minimum-scale=1.0, user-scalable=yes, width='+ww);
+                }
+            }
+        }
+        setViewport();
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header_top">
+            <div class="bg_img lazy-bg" data-src="assets/img/1bgs.png">
+                <div class="wrap_ht">
+                    <div class="container_h">
+                        <h2>Bhromaon</h2>
+                        <p>Safe Travel Anywhere</p>
+                        <form action="#" method="GET" id="my_form">
+                            <input type="text" name="text" id="text" placeholder="Search Your Travel Destination" required>
+                            <button class="btn search" type="submit"> 
+                                <span class="btn_text">
+                                    Search
+                                </span>
+                                <img src="assets/img/search_icon.png" alt="#">
+                            </button>
+                        </form>
+                        <div class="scroll">
+                            <div class="text_scroll">Scroll Down</div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="container flex">
+                <div class="logo">Bhromaon</div>
+                <nav class="main_menu">
+                    <ul>
+                        <li><a href="#">Who We Are</a></li>
+                        <li><a href="#">What We Do</a></li>
+                        <li><a href="#">Travel With Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger_btn">
+                    <a href="#">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="section_why_choose_us">
+            <div class="bg_img lazy-bg" data-src="assets/img/bgr_why_choose_us.png">
+                <div class="container wrap_why_choose_us">
+                    <div class="content_text">
+                        <h3>Why Choose Us</h3>
+                        <p>Tion and dislike men who are so beguiled and demoralized by desire by the charms of pleasure of
+                            the moment, so blinded by desire, that they cannot foresee </p>
+                        <p>Ddislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so
+                            blinded by desire, that.</p>
+                        <div class="button btn_explore_placed">
+                            <button class="btn"></button>
+                            <a href="#">Explore Places</a>
+                        </div>
+                    </div>
+                    <div class="content_img">
+                        <div class="img_wrap img_1">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                class="lazy" data-src="assets/img/why_choose_us1.png" alt="#">
+                        </div>
+                        <div class="img_wrap img_2">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                class="lazy" data-src="assets/img/why_choose_us2.png" alt="#">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <div class="section_how_it_works">
+            <div class="container wrap">
+
+                <div class="column">
+                    <svg>
+                        <use xlink:href="assets/svg/sprite.svg#search"></use>
+                    </svg>
+                    <div class="column_text">Search Places</div>
+                </div>
+
+                <div class="column center">
+                    <div class="center_svg">
+                        <svg>
+                            <use xlink:href="assets/svg/sprite.svg#select"></use>
+                        </svg>
+                    </div>
+                    <div class="column_text">Select Places</div>
+                </div>
+
+                <div class="column">
+                    <svg>
+                        <use xlink:href="assets/svg/sprite.svg#book_enjoy"></use>
+                    </svg>
+                    <div class="column_text">Book & Enjoy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section_spain span_1">
+            <div class="bg_img lazy-bg" data-src="assets/img/Rectangle_414.png">
+                <div class="container wrap_spain">
+                    <div class="content_text">
+                        <span>Spain</span>
+                        <h3>Grand Spain Madrid</h3>
+                        <p>But I must explain to you how all this mistaken idea of account to denouncing pleasure and
+                            praising pain was account born and I account will give you a complete account of the system</p>
+                        <div class="button btn_book_now">
+                            <button class="btn"></button>
+                            <a href="#">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section_spain span_2">
+            <div class="bg_img lazy-bg" data-src="assets/img/Rectangle_4141.png">
+                <div class="container  wrap_spain">
+                    <div class="content_text">
+                        <span>Spain</span>
+                        <h3>Grand Spain Madrid</h3>
+                        <p>But I must explain to you how all this mistaken idea of account to denouncing pleasure and
+                            praising pain was account born and I account will give you a complete account of the system</p>
+                        <div class="button btn_book_now">
+                            <button class="btn"></button>
+                            <a href="#">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section_testimonial">
+            <div class="bg_img lazy-bg" data-src="assets/img/testimonial_bg.png">
+                <div class="container wrap_testimonial">
+                    <h3>What Our Tourist Say</h3>
+                    <div class="wrap">
+                        <div class="pic">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                class="lazy" data-src="assets/img/testimonial_pic.png" alt="#">
+                        </div>
+                        <div class="text">
+                            <h4>Sam Sumon</h4>
+                            <p>
+                                <i class="fa fa-quote-left"></i>
+                                But I must explain to you how all this mistaken idea of account to denouncinpleasure and
+                                praising pain But I must explain to you how all this mistaken idea of account to nai
+                                denouncing pleasure and praising pain was account born and I account will give you a
+                                complete account of the system was account born and I account will give you a nai the
+                                complete account of the system</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container_f bhromaon">
+            <div class="wrap">
+                <h3>Bhromaon</h3>
+                <div class="text">Safe Travel Anywhere</div>
+                <ul>
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook"><span class="icon-facebook"></span></a>
+                    </li>
+                    <li><a href="https://twitter.com/" target="_blank" rel="nofollow" title="Twitter"><span class="icon-twitter"></span></a></li>
+                    <li><a href="https://www.linkedin.com/" target="_blank" rel="nofollow" title="Linkedin"><span class="icon-linkedin2"></span></a>
+                    </li>
+                    <li><a href="https://www.youtube.com/" target="_blank" rel="nofollow" title="Youtube"><span class="icon-youtube"></span></a>
+                    </li>
+                    <li><a href="https://www.pinterest.com/" target="_blank" rel="nofollow" title="Pinterest"><span
+                                class="icon-pinterest"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/intersection-observer.js"></script>
+    <script src="assets/js/lazyload.js"></script>
+
+    <script>
+        $(function () {
+
+            $(".btn_read_more").on('click', function () {
+                $("p").toggleClass("open1");
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
