@@ -220,6 +220,8 @@ function nextDate(){
                 dayNumber = 1;
                 monthNumber= monthNumber + 1;
                 alert(dayNumber + "." + monthNumber + "." + yearNumber);
+            } else{
+                alert("Enter correct date");
             }
             break;
         case 2:
@@ -241,6 +243,8 @@ function nextDate(){
                     dayNumber = 1;
                     monthNumber= monthNumber + 1;
                     alert(dayNumber + "." + monthNumber + "." + yearNumber);
+                }else{
+                    alert("Enter correct date");
                 }
              }
             break;
@@ -255,6 +259,8 @@ function nextDate(){
                 dayNumber = 1;
                 monthNumber= monthNumber + 1;
                 alert(dayNumber + "." + monthNumber + "." + yearNumber);
+            }else{
+                alert("Enter correct date");
             }
             break;
         case 12:
@@ -266,7 +272,12 @@ function nextDate(){
                 monthNumber= 1;
                 yearNumber = yearNumber +1;
                 alert(dayNumber + "." + monthNumber + "." + yearNumber);
+            }else{
+                alert("Enter correct date");
             }
+            break;
+        default:
+            alert("Enter correct date");
             break;
     }
 }
