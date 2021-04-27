@@ -15,7 +15,7 @@ function goAge(){
 }
 
 function number(){
-    let n =parseInt(prompt("Enter a namber from 0 to 9"));
+    let n =parseInt(prompt("Enter a number from 0 to 9"));
     let symbol = '';
 
     switch(n){
@@ -48,6 +48,9 @@ function number(){
             break;
         case 9:
             symbol = "(";
+            break;
+        default:
+            symbol ="Enter valid number";
             break;
     }
     alert(symbol);
