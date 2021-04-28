@@ -101,7 +101,6 @@
 пока пользователь не откажется.*/
  function calculator(){
     //  debugger;
-
     let rez;
     let d = true;
     do{   
@@ -125,59 +124,125 @@
             alert("Enter corect date");
         }
 
-        question = parseInt(prompt("Хотите решить еще один пример? \r1.Да \r2.Нет"));
-        if(question==1){
+        // question = parseInt(prompt("Хотите решить еще один пример? \r1.Да \r2.Нет"));
+        // if(question==1){
+        //     d=true;
+        // } else if(question==2){
+        //     d=false;
+        // }
+
+        question = confirm("Хотите решить еще один пример?");
+        if(question===true){
             d=true;
-        } else if(question==2){
+        } else if(question ===false){
             d=false;
         }
 
    }while(d);
 }
 
-
 /*Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа
  и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).*/
 
 function shiftNumber() {
-    // debugger;
-    let n = parseInt(document.getElementById("shift_number").value);
-    let b = parseInt(document.getElementById("shift_n").value);
-    let m =0;
-    let rez=0;
-    let k = Math.pow(10, b);
-    while(n>0) {
-        m = (m*k + n%k).toFixed(0);
-        n = (n/k).toFixed(0);
-        rez = m;
+        // debugger;
+        let n = parseInt(document.getElementById("shift_number").value);
+        let shift = parseInt(document.getElementById("shift_n").value);
+
+        let numberDigits = 0;
+        let i = 0;
+        while(n!=0) {
+            n =(n/10).toFixed(0);
+            i++;
+            numberDigits = i;
+        }   
+        n = parseInt(document.getElementById("shift_number").value);
+        let k =(numberDigits-shift);
+        let delitel = Math.pow(10, k);
+        let sdvigaem =parseInt(n / delitel);
+        let ostatoc = n%delitel;
+        let rez = ostatoc *Math.pow(10,  shift) + sdvigaem;
+
+        
+        document.getElementById("shift_rez").innerHTML = rez;
     }
-    document.getElementById("shift_rez").innerHTML = rez;
-}
 
 /*Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» 
 и так до тех пор, пока пользователь нажимает OK.*/
 
-
 function dayOfWeek(){
-    debugger;
-    let d = new Date();
-    let rez = d.getDay();
+        debugger;
+        let d = new Date();
+        let rez = d.getDay();
 
-    alert("сeгодня: "+ rez);
-    let question = confirm("Хотите увидеть следующий день?");
+        switch(rez){
+            case 1:
+                day = "Понедельник";
+                break;
+            case 2:
+                day = "Вторник";
+                break;
+            case 3:
+                day = "Среда";
+                break;
+            case 4:
+                day = "Четверг";
+                break;
+            case 5:
+                day = "Пятница";
+                break;
+            case 6:
+                day = "Суббота";
+                break;
+            case 7:
+                day = "Воскресение";
+                break;
+            default:
+                day="И что тут писать? нужен он здесь?";
+                break;
+        }
+        alert("сeгодня: "+ day);
 
-    while( question===true){
-        rez = rez + 1;
-        if(rez>=0 && rez<=7){
-            alert("следующий: "+ rez);
-            question = confirm("Хотите увидеть следующий день?");
-        } else if(rez>8){
-            rez=1;
-            alert("следующий: "+ rez);
-            question = confirm("Хотите увидеть следующий день?");
+        let question = confirm("Хотите увидеть следующий день?");
+        while( question===true){
+            rez = rez + 1;
+            let day="";
+            if(rez>=0 && rez<=7){
+                switch(rez){
+                    case 1:
+                        day = "Понедельник";
+                        break;
+                    case 2:
+                        day = "Вторник";
+                        break;
+                    case 3:
+                        day = "Среда";
+                        break;
+                    case 4:
+                        day = "Четверг";
+                        break;
+                    case 5:
+                        day = "Пятница";
+                        break;
+                    case 6:
+                        day = "Суббота";
+                        break;
+                    case 7:
+                        day = "Воскресение";
+                        break;
+                    default:
+                        day="И что тут писать? нужен он здесь?";
+                        break;
+                }
+                alert("следующий: "+ day);
+                question = confirm("Хотите увидеть следующий день?");
+            } else if(rez>8){
+                rez=1;
+                alert("следующий: Понедельник");
+                question = confirm("Хотите увидеть следующий день?");
+            }
         }
     }
-}
 
 /*Вывести таблицу умножения для всех чисел от 2 до 9. 
 Каждое число необходимо умножить на числа от 1 до 10.*/
@@ -197,33 +262,33 @@ function multiplicationTable(){
  в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». В зависимости от того что 
  указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам 
  и получили 50. Если пользователь указал, что его число > 50, то изменили*/ 
- 
-  function guess(){
-    // debugger;
-    let n =100;
-    let itog =true;
-    alert("Guess a number from 1 to 100");
-    let question = parseInt(prompt("Выберите правильный ответ \r1.Ваше число равно " +n + "\r2.Ваше число меньше чем" +n ));
-    while(n!==itog){
     
-      if(question==2){  
-        n=n/2;
-        question = parseInt(prompt("Выберите правильный ответ \r1.Ваше число равно " +n +"\r2. Ваше число меньше чем  "+n+ "\r3.Ваше число больше чем" +n ));
+function guess(){
+            // debugger; 
+            let itog =true;
+            let start =0;
+            let finish =100;
+           
+            alert("Guess a number from 1 to 100");
+           
+                let  n = (finish - start)/2;
+                let question = parseInt(prompt("Выберите правильный ответ \r1.Ваше число равно " +n +"\r2. Ваше число меньше чем  "+n+ "\r3.Ваше число больше чем" +n));
+            do{
+                if(question==2){  
+                    finish=n;
+                    n = parseInt((finish - start)/2);
+                    question = parseInt(prompt("Выберите правильный ответ \r1.Ваше число равно " +n +"\r2. Ваше число меньше чем  "+n+ "\r3.Ваше число больше чем" +n));
+                    itog=false;
+                }else if(question==3){   
+                    start=n;
+                    n=parseInt((finish - start)/2 + start);
+                    question = parseInt(prompt("Выберите правильный ответ \r1.Ваше число равно " +n +"\r2. Ваше число меньше чем  "+n+ "\r3.Ваше число больше чем" +n));
+                    itog=false;
+                } else  if(question==1){
+                    alert("Отлично");
+                    itog=true;
+                }
 
-      }else if(question==3){
-          
-          n=n+(n/2);
-          question = parseInt(prompt("Выберите правильный ответ \r1.Ваше число равно " +n +"\r2. Ваше число меньше чем  "+n+ "\r3.Ваше число больше чем" +n ));
-
-      }else if(question==1){
-          alert("Отлично");
-          n=itog;
-      }
-
-    }
-}   
-    
-  
-    
-    
+            }while(!itog===true);
+}
 
