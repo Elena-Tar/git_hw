@@ -11,14 +11,13 @@ function comparison_2_numbers(a,b){
 }
 
 function takesValues_compare(){
-    debugger;
+    // debugger;
     let num1 = parseInt(document.getElementById("number1").value);
     let num2 = parseInt(document.getElementById("number2").value);
     let rez = document.getElementById("compare_rez").innerHTML = comparison_2_numbers(num1, num2);
 }
 
-
-/*Написать функцию, которая вычисляет факториал переданного ей числа.*/  //сделать кнопку
+/*Написать функцию, которая вычисляет факториал переданного ей числа.*/  
 function getFactorial(n){
     // debugger
     let rez=1;
@@ -30,17 +29,34 @@ function getFactorial(n){
 // alert(getFactorial(4));
 
 function factorial(){
-    debugger;
+    // debugger;
     let num1 = parseInt(document.getElementById("factorial_number1").value);
-    let rez = getFactorial(num1);
+    if(num1>0){
+        rez = getFactorial(num1);
+    } else if(num1===0){
+        rez = 1;
+    } else {
+         alert("Enter a non-negative number");
+    }   
     document.getElementById("factorial_rez").innerHTML = rez;
 }
 
-
 /*Написать функцию, которая принимает три отдельные цифры и превращает их в одно число.
  Например: цифры 1, 4, 9 превратятся в число 149.*/
+function module(a){
+    if(a>0){
+        return a;
+    } else if (a<0){
+        return a*(-1);
+    } else if(a===0){
+        return 0;
+    }
+}
+// alert(module(0));
+
+
  function create(a,b,d){
-    return a*100 + b*10 +d;
+    return module(a*100) + module(b*10) +module(d);
  }
 
  function createNumber(){
@@ -68,15 +84,19 @@ function factorial(){
 
 function areaRectangle(){
     // debugger;
+    let rez =0;
     let num1 = parseInt(document.getElementById("side_of_the_rectangle1").value);
-    let num2 = parseInt(document.getElementById("side_of_the_rectangle2").value);
-    let rez = get_areaRectangle(num1, num2=0);
+    let num2 = parseInt(document.getElementById("side_of_the_rectangle2").value) || 0;
+    if(num1>=0 && num2>=0){
+         rez = get_areaRectangle(num1, num2);
+    } else {
+        alert("Enter correct data");
+    }
+    
     document.getElementById("areaRectangle_rez").innerHTML = rez;
 }
 
 /*Написать функцию, которая проверяет, является ли переданное ей число совершенным. Совершенное число – это число, равное сумме всех своих собственных делителей.*/
-
-
 function perfect_number_check(n){ // проверка на совершенство
     // debugger;
     let sum=0;
@@ -130,10 +150,6 @@ function addZero(n){
     return(n<10)?"0"+n:n;
 }
 
-// $(function () {
-//     $('#h_number').mask('00:00:00')
-// })
-
 
 function time_number1(h=0, m=0, s=0){
     return  addZero(h)+":"+addZero(m)+":"+addZero(s);
@@ -143,13 +159,17 @@ function time_number1(h=0, m=0, s=0){
 
 function time_number(){
     debugger;
+    let rez ="";
     let h_num =parseInt(document.getElementById("h_number").value) || 0;
     let m_num =parseInt(document.getElementById("m_number").value) || 0;
     let s_num =parseInt(document.getElementById("s_number").value) || 0;
-    let rez = time_number1(h_num, m_num, s_num);
+    if(h_num>=0 && m_num>=0 && s_num>=0){
+        rez = time_number1(h_num, m_num, s_num);
+    } else {
+        alert("Enter correct data");
+    }
     document.getElementById("time_rez").innerHTML = rez;
 }
-
 
 /*Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.*/
 
@@ -173,7 +193,11 @@ function time_sec_converter_number(){
     let m_num =parseInt(document.getElementById("m_time").value);
     let s_num =parseInt(document.getElementById("s_time").value);
     let rez=0;
-    rez = time_covertor(h_num, m_num, s_num);
+    if (h_num>=0 && m_num>=0 && s_num>=0){
+        rez = time_covertor(h_num, m_num, s_num);
+    } else {
+        alert("Enter correct data");
+    } 
     document.getElementById("time_sec_converter_rez").innerHTML = rez;
 }
 
@@ -198,28 +222,20 @@ function getTime(s){
 // alert(getTime(7810));
 // alert(getTime(0));
 
-
 function get_time_from_seconds() {
     debugger;
+    let rez="";
     let s =parseInt(document.getElementById("second_time").value);
-    let rez = getTime(s);
+    if(s>=0){
+        rez = getTime(s);
+    } else{
+        alert("Enter correct data");
+    } 
     document.getElementById("time_from_seconds_rez").innerHTML = rez;
 }
 
-
 /*Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». 
 При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».*/
-function module(a){
-    if(a>0){
-        return a;
-    } else if (a<0){
-        return a*(-1);
-    } else if(a===0){
-        return 0;
-    }
-}
-// alert(module(0));
-
 
 $(function () {
     $('.date').mask('99:99:99');
