@@ -160,28 +160,38 @@ let objTime = {
         let rez = addZero(this.get("h")) + ":" + addZero(this.get("m")) + ":" + addZero(this.get("s"));
         document.getElementById("data_time_rez").innerHTML = rez;
     },
-    data_time_change() {
-        debugger;
-        let t_change = document.getElementById("change_time_input").value;
-        let arr_change = t_change.split(":");
-        let h_ch = parseInt(arr_change[0]);
-        let m_ch = parseInt(arr_change[1]);
-        let s_ch = parseInt(arr_change[2]);
-        if (h_ch >= 0 && m_ch >= 0 && s_ch >= 0) {
-            rez_t_ch = time_covertor(h_ch, m_ch, s_ch);  //получили секунды изменяемого времени
+    data_time1(elem) {
+        let arrt = elem.split(":");
+        let h = parseInt(arrt[0]);
+        let m = parseInt(arrt[1]);
+        let s = parseInt(arrt[2]);
+        if (h >= 0 && m >= 0 && s >= 0) {
+            rez_s = time_covertor(h, m, s);  //получили секунды изменяемого времени
         } else {
             alert("Enter correct data");
         }
+        return rez_s;
+    },
+    data_time_change() {
+        debugger;
+        let a = document.getElementById("data_time_input").value;
+        let num1 = objTime.data_time1(a);
+        let b = document.getElementById("change_time_input").value;
+        let num2 = objTime.data_time1(b);
+        let summ_s = num1 + num2;
+        let norm_t = getTime(summ_s);   // получили норм время 
+        let normArr = norm_t.split(":");
+        let h_new = parseInt(normArr[0]);
+        let m_new = parseInt(normArr[1]);
+        let s_new = parseInt(normArr[2]);
 
-
-
-
-
-
-        // let summ_s = rez_t_ch + rez_t_new;
-        // let summ_norm = getTime(summ_s);
-        // document.getElementById("change_time_rez").innerHTML = summ_norm;
+        objTime.set(["h"], h_new);
+        objTime.set(["m"], m_new);
+        objTime.set(["s"], s_new);
+        let rez = addZero(this.get("h")) + ":" + addZero(this.get("m")) + ":" + addZero(this.get("s"));
+        document.getElementById("change_time_rez").innerHTML = rez;
     }
+
 }
 
 
@@ -206,6 +216,7 @@ function time_covertor(a = 0, b = 0, c = 0) {
     rez = a + b + c;
     return rez;
 }
+
 /*9. Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».*/
 
 function getTime(s) {
@@ -223,17 +234,6 @@ function getTime(s) {
     rez = addZero(h) + ":" + addZero(m) + ":" + addZero(s);
     return rez;
 }
-
-// console.log(objTime.set(["h"], 20));
-// console.log(objTime.set(["m"], 15));
-// console.log(objTime.set(["s"], 10));
-// console.log(objTime.get("h"));
-// console.log(objTime.get("m"));
-// console.log(objTime.get("s"));
-
-
-
-
 
 
 
