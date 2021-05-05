@@ -194,7 +194,6 @@ let objTime = {
 
 }
 
-
 // console.log(objTime.get("h"));
 // console.log(objTime["m"]);
 // console.log(objTime["s"]);
