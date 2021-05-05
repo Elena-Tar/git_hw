@@ -173,7 +173,7 @@ let objTime = {
         return rez_s;
     },
     data_time_change() {
-        debugger;
+        // debugger;
         let a = document.getElementById("data_time_input").value;
         let num1 = objTime.data_time1(a);
         let b = document.getElementById("change_time_input").value;
