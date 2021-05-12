@@ -23,6 +23,7 @@
             color: #fff;
             z-index: 10;
         }
+
         #top_panel button {
             position: absolute;
             right: 20px;
@@ -37,18 +38,23 @@
             line-height: 16px;
             margin-top: -8px;
         }
+
         #top_panel.panel_info {
             background-color: rgba(13, 133, 235, .8);
         }
+
         #top_panel.panel_success {
             background-color: rgba(9, 153, 20, .8);
         }
+
         #top_panel.panel_danger {
             background-color: rgba(198, 17, 17, .8);
         }
+
         #top_panel.panel_danger button {
             color: #fff;
         }
+
         #top_panel.panel_warning {
             background-color: rgba(235, 166, 13, .8);
         }
@@ -87,31 +93,53 @@
                         </div>
                     </div>
                     <div class="card-footer text-end">
-                        <button  class="btn btn-success" onclick="addToCart()">Add to cart</button>
-                    </div>     
+                        <button class="btn btn-success" onclick="addToCart()">Add to cart</button>
+                    </div>
                 </div>
-                <button  type="button" class="btn btn-info" onclick="maxTotalProduct()">Max</button>      
+                <button type="button" class="btn btn-info" onclick="maxTotalProduct()">Max</button>
                 <div id="max_prod"></div>
-
-                <button  type="button" class="btn btn-info" onclick="mySort()">Sort</button>  
-                </div>
+                <br>
+                <button type="button" class="btn btn-info" onclick="mySort()">Sort</button>
+            </div>
             <div class="col-4">
-                <div id="cart_list" ></div>
+                <div id="cart_list"></div>
             </div>
         </div>
 
 
 
 
-
-
-
-
         <input type="text" id="text_style" class="form-control">
-        <button  class="btn btn-success" onclick="myStyle()">Add styles</button>
+        <button class="btn btn-success" onclick="myStyle()">Add styles</button>
         <div id="res_style"></div>
+        <br><br>
+        <br>
 
-        
+
+
+        <!--4-->
+        <button class="btn btn-success" onclick="printAudience()">Display all audiences</button>
+        <div id="res_print"></div>
+
+
+        <input type="text" id="for_faculty" class="form-control" placeholder="Еnter the name of the faculty">
+        <button class="btn btn-success" onclick="search_by_faculty()">Search by faculty</button>
+        <div id="res_faculty"></div>
+        <br>
+        <input type="text" id="for_characteristics_1" class="form-control" placeholder="Enter audience name">
+        <input type="number" id="for_characteristics_2" class="form-control" placeholder="Еnter the number of students">
+        <input type="text" id="for_characteristics_3" class="form-control" placeholder="Еnter the name of the faculty">
+        <button class="btn btn-success" onclick="search_by_characteristics()">Search by characteristics</button>
+        <div id="res_characteristics"></div>
+        <br>
+
+        <button class="btn btn-success" onclick="sort_audience()">Sorting by number of seats</button>
+        <div id="res_sort"></div>
+        <br>
+        <button class="btn btn-success" onclick="sort_audience_alphabet()">sort alphabetically</button>
+        <div id="res_sort_alphabet"></div>
+
+
     </div>
 
 

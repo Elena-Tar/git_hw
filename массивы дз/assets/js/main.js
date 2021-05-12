@@ -113,38 +113,26 @@ const cartAction = {
             total: max_total
         };
 
-    }
-
-};
-
-
-function letSort(arr) {
-    debugger;
-    arr.sort(
-        function (a, b) {
-            if (a.buy !== "true") {
-                return 1;
-            } else {
-                return -1;
+    },
+    letSort(arr) {
+        arr.sort(
+            function (a, b) {
+                if (a.buy !== false) {
+                    return 1;
+                } else {
+                    return -1;
+                }
             }
-        }
 
-    )
-    console.log(arr);
+        )
+        // console.log(arr);
+        printCart();
+    }
 };
 
 function mySort() {
-    debugger;
-    letSort(CART);
+    cartAction.letSort(CART);
 }
-
-
-
-
-
-
-
-
 
 
 function maxTotalProduct() {
@@ -198,8 +186,6 @@ function addToCart() {
         topPanel.warning(errMsg.join(""), true);
     }
 }
-
-
 
 
 function printCart() {    //метод который будет печатать состояние корзины
@@ -282,9 +268,179 @@ function myStyle() {
 };
 
 
-let arr_audience = [
 
+/*задача 4*/
+
+let arrAudience = [
+    {
+        numb_name: "first audience",
+        quantity: 19,
+        faculty_name: "Department of Economics"
+    },
+    {
+        numb_name: "second audience",
+        quantity: 12,
+        faculty_name: "Faculty of Cybersecurity"
+    },
+    {
+        numb_name: "third audience",
+        quantity: 16,
+        faculty_name: "Faculty of Business"
+    },
+    {
+        numb_name: "fourth audience",
+        quantity: 18,
+        faculty_name: "Faculty of Automation and Electronics"
+    },
+    {
+        numb_name: "fifth audience",
+        quantity: 20,
+        faculty_name: "Faculty of Tourism"
+    }
 ];
+
+function printAudience1(arr) {
+    let res = "<ul>";
+    for (let i = 0; i < arr.length; i++) {
+        res += `<li> Название ауд: ${arr[i].numb_name};  Кол.мест: ${arr[i].quantity};  Факультет:${arr[i].faculty_name};  </li>`;
+
+    }
+    res += "</ul>"
+    return res;
+}
+
+function printAudience() {
+    let res = printAudience1(arrAudience);
+    document.getElementById("res_print").innerHTML = res;
+};
+
+function search_by_faculty() {
+    let data_faculty = document.getElementById("for_faculty").value;
+    // let isset_el = arrAudience.find(function (el) {
+    //     if (el.faculty_name == data_faculty) {
+    //         return el;
+    //     }
+    // });
+    let isset_id = arrAudience.findIndex(function (el) {
+        if (el.faculty_name == data_faculty) {
+            return el;
+        }
+    });
+    // console.log(isset_id);
+    // console.log(arrAudience[isset_id]);
+    let res = arrAudience[isset_id].numb_name;
+    document.getElementById("res_faculty").innerHTML = res;
+}
+
+function search_by_characteristics() {
+
+    let numb = document.getElementById("for_characteristics_1").value,
+        qty = document.getElementById("for_characteristics_2").value,
+        faculty = document.getElementById("for_characteristics_3").value;
+
+    let isset_id = arrAudience.findIndex(function (el) {
+        if (el.numb_name == numb && el.quantity >= qty && el.faculty_name == faculty) {
+            return el;
+        }
+    });
+    let res = `${arrAudience[isset_id].numb_name}; ${arrAudience[isset_id].quantity} ${arrAudience[isset_id].faculty_name} `;
+    document.getElementById("res_characteristics").innerHTML = res;
+
+}
+
+function sort_audience() {
+    // debugger;
+    let arrnew = arrAudience.sort(function (a, b) {
+        if (a.quantity > b.quantity) {
+            return 1;
+        } else if (a.quantity < b.quantity) {
+            return -1;
+        } else if (a.quantity == b.quantity) {
+            return 0;
+        }
+    })
+    let res = printAudience1(arrnew);
+    document.getElementById("res_sort").innerHTML = res;
+}
+
+function sort_audience_alphabet() {
+    let arrnew = arrAudience.sort(function (a, b) {
+        if (a.numb_name > b.numb_name) {
+            return 1;
+        } else if (a.numb_name < b.numb_name) {
+            return -1;
+        } else if (a.numb_name == b.numb_name) {
+            return 0;
+        }
+    })
+    let res = printAudience1(arrnew);
+    document.getElementById("res_sort_alphabet").innerHTML = res;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

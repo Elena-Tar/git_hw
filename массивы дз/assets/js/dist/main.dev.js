@@ -121,26 +121,22 @@ var cartAction = {
       title: CART[max_key].title,
       total: max_total
     };
+  },
+  letSort: function letSort(arr) {
+    arr.sort(function (a, b) {
+      if (a.buy !== false) {
+        return 1;
+      } else {
+        return -1;
+      }
+    }); // console.log(arr);
+
+    printCart();
   }
 };
 
-function letSort(arr) {
-  debugger;
-  arr.sort(function (a, b) {
-    if (a.buy !== "true") {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-  console.log(arr);
-}
-
-;
-
 function mySort() {
-  debugger;
-  letSort(CART);
+  cartAction.letSort(CART);
 }
 
 function maxTotalProduct() {
@@ -263,4 +259,104 @@ function myStyle() {
 }
 
 ;
-var arr_audience = [];
+/*задача 4*/
+
+var arrAudience = [{
+  numb_name: "first audience",
+  quantity: 19,
+  faculty_name: "Department of Economics"
+}, {
+  numb_name: "second audience",
+  quantity: 12,
+  faculty_name: "Faculty of Cybersecurity"
+}, {
+  numb_name: "third audience",
+  quantity: 16,
+  faculty_name: "Faculty of Business"
+}, {
+  numb_name: "fourth audience",
+  quantity: 18,
+  faculty_name: "Faculty of Automation and Electronics"
+}, {
+  numb_name: "fifth audience",
+  quantity: 20,
+  faculty_name: "Faculty of Tourism"
+}];
+
+function printAudience1(arr) {
+  var res = "<ul>";
+
+  for (var _i3 = 0; _i3 < arr.length; _i3++) {
+    res += "<li> \u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0430\u0443\u0434: ".concat(arr[_i3].numb_name, ";  \u041A\u043E\u043B.\u043C\u0435\u0441\u0442: ").concat(arr[_i3].quantity, ";  \u0424\u0430\u043A\u0443\u043B\u044C\u0442\u0435\u0442:").concat(arr[_i3].faculty_name, ";  </li>");
+  }
+
+  res += "</ul>";
+  return res;
+}
+
+function printAudience() {
+  var res = printAudience1(arrAudience);
+  document.getElementById("res_print").innerHTML = res;
+}
+
+;
+
+function search_by_faculty() {
+  var data_faculty = document.getElementById("for_faculty").value; // let isset_el = arrAudience.find(function (el) {
+  //     if (el.faculty_name == data_faculty) {
+  //         return el;
+  //     }
+  // });
+
+  var isset_id = arrAudience.findIndex(function (el) {
+    if (el.faculty_name == data_faculty) {
+      return el;
+    }
+  }); // console.log(isset_id);
+  // console.log(arrAudience[isset_id]);
+
+  var res = arrAudience[isset_id].numb_name;
+  document.getElementById("res_faculty").innerHTML = res;
+}
+
+function search_by_characteristics() {
+  var numb = document.getElementById("for_characteristics_1").value,
+      qty = document.getElementById("for_characteristics_2").value,
+      faculty = document.getElementById("for_characteristics_3").value;
+  var isset_id = arrAudience.findIndex(function (el) {
+    if (el.numb_name == numb && el.quantity >= qty && el.faculty_name == faculty) {
+      return el;
+    }
+  });
+  var res = "".concat(arrAudience[isset_id].numb_name, "; ").concat(arrAudience[isset_id].quantity, " ").concat(arrAudience[isset_id].faculty_name, " ");
+  document.getElementById("res_characteristics").innerHTML = res;
+}
+
+function sort_audience() {
+  // debugger;
+  var arrnew = arrAudience.sort(function (a, b) {
+    if (a.quantity > b.quantity) {
+      return 1;
+    } else if (a.quantity < b.quantity) {
+      return -1;
+    } else if (a.quantity == b.quantity) {
+      return 0;
+    }
+  });
+  var res = printAudience1(arrnew);
+  document.getElementById("res_sort").innerHTML = res;
+}
+
+function sort_audience_alphabet() {
+  var arrnew = arrAudience.sort(function (a, b) {
+    if (a.numb_name > b.numb_name) {
+      return 1;
+    } else if (a.numb_name < b.numb_name) {
+      return -1;
+    } else if (a.numb_name == b.numb_name) {
+      return 0;
+    }
+  });
+  var res = printAudience1(arrnew);
+  document.getElementById("res_sort_alphabet").innerHTML = res;
+}
