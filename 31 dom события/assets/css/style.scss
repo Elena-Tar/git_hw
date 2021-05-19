@@ -1,0 +1,45 @@
+@import 'reset';
+
+input {
+    width: 400px;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+a {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+p {
+    border: 1px solid red;
+    width: 500px;
+    height: 60px;
+    margin-top: 20px;
+}
+
+div {
+    width: 300px;
+    height: 100px;
+    background: yellow;
+    margin-top: 10px;
+}
+
+th {
+    width: 140px;
+}
+
+.th1 {
+    width: 80px;
+}
+
+th {
+    text-align: center;
+}
+
+th,
+td {
+    border: 1px solid black;
+}
