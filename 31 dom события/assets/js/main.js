@@ -68,6 +68,7 @@ function func4() {
 let date_elems = document.getElementsByClassName("date_of_hiring");
 let dateS = [];
 let date_arrItem = [];
+let esho_odin = [];
 
 let btn_date = document.getElementById("s_date");
 btn_date.addEventListener('click', func5);
@@ -77,7 +78,7 @@ function func5() {
         // console.log(date_elems[i].innerHTML);
         dateS[i] = new Date(date_elems[i].innerHTML);
         date_arrItem[i] = dateS[i].getTime();
-        console.log(date_arrItem);
+        // console.log(date_arrItem);
         // date_arrItem[i] = date_elems[i].innerHTML;
         // console.log(date_arrItem);
     }
@@ -85,10 +86,19 @@ function func5() {
         return a - b;
     });
     for (let i = 0; i < date_elems.length; i++) {
-        date_elems[i].innerHTML = newDate_arrItem[i];
+        // date_elems[i].innerHTML = newDate_arrItem[i];
+        // console.log(newDate_arrItem[i]);
+        esho_odin[i] = new Date(newDate_arrItem[i]);
+        // console.log(esho_odin);
+        date_elems[i].innerHTML = addZero(esho_odin[i].getDate()) + "." + addZero((esho_odin[i].getMonth() + 1)) + "." + esho_odin[i].getFullYear();
     }
 
 }
+
+function addZero(n) {
+    return (n < 10) ? "0" + n : n;
+}
+
 
 let t = new Date(1436302800000);
 let y = t.getFullYear();
