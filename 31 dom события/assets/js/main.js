@@ -90,7 +90,7 @@ function func5() {
         // console.log(newDate_arrItem[i]);
         esho_odin[i] = new Date(newDate_arrItem[i]);
         // console.log(esho_odin);
-        date_elems[i].innerHTML = addZero(esho_odin[i].getDate()) + "." + addZero((esho_odin[i].getMonth() + 1)) + "." + esho_odin[i].getFullYear();
+        date_elems[i].innerHTML = addZero(esho_odin[i].getMonth() + 1) + "." + addZero(esho_odin[i].getDate()) + "." + esho_odin[i].getFullYear();
     }
 
 }
