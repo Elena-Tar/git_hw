@@ -7,7 +7,7 @@ btn_age.addEventListener('click', func1);
 function func1() {
 
     for (let i = 0; i < age_elems.length; i++) {
-        age_arrItem[i] = age_elems[i].innerHTML;
+        age_arrItem[i] = parseInt(age_elems[i].innerHTML);
     }
     console.log(age_arrItem);
     let newAge_arrItem = age_arrItem.sort(function (a, b) {
@@ -65,6 +65,38 @@ function func4() {
     }
 }
 
+let date_elems = document.getElementsByClassName("date_of_hiring");
+let dateS = [];
+let date_arrItem = [];
+
+let btn_date = document.getElementById("s_date");
+btn_date.addEventListener('click', func5);
+
+function func5() {
+    for (let i = 0; i < date_elems.length; i++) {
+        // console.log(date_elems[i].innerHTML);
+        dateS[i] = new Date(date_elems[i].innerHTML);
+        date_arrItem[i] = dateS[i].getTime();
+        console.log(date_arrItem);
+        // date_arrItem[i] = date_elems[i].innerHTML;
+        // console.log(date_arrItem);
+    }
+    let newDate_arrItem = date_arrItem.sort(function (a, b) {
+        return a - b;
+    });
+    for (let i = 0; i < date_elems.length; i++) {
+        date_elems[i].innerHTML = newDate_arrItem[i];
+    }
+
+}
+
+let t = new Date(1436302800000);
+let y = t.getFullYear();
+let m = t.getMonth() + 1;
+let d = t.getDate()
+console.log(y);
+console.log(m);
+console.log(d);
 
 
 
