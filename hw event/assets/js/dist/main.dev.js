@@ -38,30 +38,25 @@ var width;
 var height;
 var width_n;
 var height_n;
+var flag = false;
 
 function go_start(event) {
   w = event.clientX;
   h = event.clientY;
-  width = window.getComputedStyle(text_div, "").width;
-  height = window.getComputedStyle(text_div, "").height;
-  isDrawing = true; // console.log(w);
-  // console.log(h);
-  // console.log(width);
-  // console.log(height);
+  flag = true;
 }
 
 function go_end(event) {
-  text_div.style.width = parseInt(width) + (event.clientX - w) + 'px';
-  text_div.style.height = parseInt(height) + (event.clientY - h) + 'px'; // console.log(width);
-  // console.log(w);
-  // console.log(event.clientX)
-  // console.log(event.clientY)
+  if (flag == true) {
+    text_div.style.width = parseInt(window.getComputedStyle(text_div, "").width) + (event.clientX - w) + 'px';
+    text_div.style.height = parseInt(window.getComputedStyle(text_div, "").height) + (event.clientY - h) + 'px';
+  }
 }
 
 document.body.addEventListener('mouseup', go_end1);
 
 function go_end1() {
-  document.body.off(); //горшочек не вари 
+  flag = false;
 }
 /*2я*/
 
