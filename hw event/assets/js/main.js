@@ -63,46 +63,172 @@ function go_end1() {
 }
 
 
-
-
 /*2я*/
 
-let allTR = document.getElementsByTagName("tr");
-// console.log(allTR);
-let btn_age = document.getElementById("s_age");
-btn_age.addEventListener('click', func1);
-let x;
-let y;
-let a = false;
+let tbl = document.getElementById("tbl");
 
-function func1() {
-    for (let i = 1; i < allTR.length - 1; i++) {
-        // console.log(allTR);
-        console.log(allTR[1]);
-        x = allTR[i].getElementsByTagName("TD")[4];
-        y = allTR[i + 1].getElementsByTagName("TD")[4];
-        if (parseInt(x.innerText) > parseInt(y.innerHTML)) {
-            allTR[i].parentNode.insertBefore(allTR[i + 1], allTR[i]);
+tbl.querySelectorAll("th").forEach((th) => {
+    th.addEventListener('click', function (e) {
+        // console.log(e);
+        const ind = e.target.cellIndex;
+        // console.log(ind);
+        // console.log(th);
+        sortTable(th, ind);
+    })
+})
+let sorted = true;
+
+function sortTable(th, ind) {
+    // debugger;
+    let dir = "asc"; // чтобы сортировать в обе стороны
+    if (th.dataset.order) {
+        dir = th.dataset.order;
+    }
+
+    let rows = tbl.querySelectorAll("tbody>tr");
+    // console.log(rows);
+    sorted = true;
+    let change_order = true;
+    let a, b;
+    let change_i;
+    let tbody = tbl.querySelector("tbody");
+    // console.log(tbody);
+    while (sorted) {
+        sorted = false;
+        change_order = false;
+        rows = tbl.querySelectorAll("tbody>tr");
+        for (let i = 0; i < rows.length - 1; i++) {
+            a = rows[i].children[ind].innerText;
+            b = rows[i + 1].children[ind].innerText;
+            // console.log(a, b);
+            if (dir === "asc") {
+                if (!isNaN(parseInt(a)) && parseInt(a) == a) {
+                    if (parseInt(a) > parseInt(b)) {
+                        change_order = true;
+                        change_i = i;
+                        // console.log(change_i);
+                        break;
+                    }
+                } else {
+                    if (/^[0-9]{2}.[0-9]{2}.[0-9]{4}?$/.test(a)) {
+                        a = date2ts(a);
+                        b = date2ts(b);
+                        if (parseInt(a) > parseInt(b)) {
+                            change_order = true;
+                            change_i = i;
+                        }
+                    } else {
+                        if (a > b) {
+                            change_order = true;
+                            change_i = i;
+                            break;
+                        }
+                    }
+                }
+
+            } else {
+                if (!isNaN(parseInt(a)) && parseInt(a) == a) {
+                    if (parseInt(a) < parseInt(b)) {
+                        change_order = true;
+                        change_i = i;
+                        break;
+                    }
+                } else {
+                    if (/^[0-9]{2}.[0-9]{2}.[0-9]{4}?$/.test(a)) {
+                        a = date2ts(a);
+                        b = date2ts(b);
+                        if (parseInt(a) < parseInt(b)) {
+                            change_order = true;
+                            change_i = i;
+                        }
+                    } else {
+                        if (a < b) {
+                            change_order = true;
+                            change_i = i;
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+        if (change_order) {
+            // console.log(change_i);
+            tbody.insertBefore(rows[change_i + 1], rows[change_i]);
+            sorted = true;
         }
     }
-}
-let btn_s_ln = document.getElementById("s_ln");
-btn_s_ln.addEventListener('click', func2);
-let arr_ln = [];
-function func2() {
-    for (let i = 1; i < allTR.length - 1; i++) {
-        // console.log(allTR);
-        // console.log(allTR[1]);
-        x = allTR[i].getElementsByTagName("TD")[2];
-        y = allTR[i + 1].getElementsByTagName("TD")[2];
-        if (x.innerText > y.innerHTML) {
-            allTR[i].parentNode.insertBefore(allTR[i + 1], allTR[i]);
-        }
-    }
+    th.dataset.order = (dir === "asc") ? "desc" : "asc";
 }
 
 
-// let allTH = document.getElementsByTagName("th");
+function date2ts(date) {
+    const [day, month, year] = date.split('.');
+    // console.log(new Date(year + '-' + month + '-' + day).getTime());
+    return new Date(year + '-' + month + '-' + day).getTime();
+}
+
+// console.log(new Date(2020 - 07 - 12))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let allTR = document.getElementsByTagName("tr");
+// // console.log(allTR);
+// let btn_age = document.getElementById("s_age");
+// btn_age.addEventListener('click', func1);
+// let x;
+// let y;
+// let a = false;
+
+// function func1() {
+//     for (let i = 1; i < allTR.length - 1; i++) {
+//         // console.log(allTR);
+//         console.log(allTR[1]);
+//         x = allTR[i].getElementsByTagName("TD")[4];
+//         y = allTR[i + 1].getElementsByTagName("TD")[4];
+//         if (parseInt(x.innerText) > parseInt(y.innerHTML)) {
+//             allTR[i].parentNode.insertBefore(allTR[i + 1], allTR[i]);
+//         }
+//     }
+// }
+// let btn_s_ln = document.getElementById("s_ln");
+// btn_s_ln.addEventListener('click', func2);
+// let arr_ln = [];
+// function func2() {
+//     for (let i = 1; i < allTR.length - 1; i++) {
+//         // console.log(allTR);
+//         // console.log(allTR[1]);
+//         x = allTR[i].getElementsByTagName("TD")[2];
+//         y = allTR[i + 1].getElementsByTagName("TD")[2];
+//         if (x.innerText > y.innerHTML) {
+//             allTR[i].parentNode.insertBefore(allTR[i + 1], allTR[i]);
+//         }
+//     }
+// }
+
+
+// // let allTH = document.getElementsByTagName("th");
 // for (let j = 1; j < allTH.length - 1; j++) {
 //     // console.log(allTH);
 //     allTH[j].addEventListener('click', func2);
