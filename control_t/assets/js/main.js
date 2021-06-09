@@ -143,30 +143,49 @@ let LeafIcon = L.Icon.extend({
 
 /*форма залогинивания*/
 
+
 function isValidEmail(email) {   //регулярка проверки валидности email (скопировали с github)
     let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
 }
 
+let send_btn = document.getElementById('send_btn')
+send_btn.addEventListener('click', validateForm);
 
-let email = document.getElementById('email');
-let name_1 = document.getElementById('name');
 
-function sendMassege(e) {
+function validateForm(e) {
+    debugger;
     e.preventDefault();
+    let email = document.getElementById('email').value;
+    let name = document.getElementById('name').value;
+
     const BOT_TOKEN = '1812836695:AAH79Qc2DHvUC8sWlVFylnBVznw4r7gCM7A';
     const CHAT_ID = '-1001285100881';
-    const text = 'Поздравляю,' + name_1.value + '! Вы успешно подписались';
-    if (isValidEmail(email)) {
-        console.log(text);
-        axios
-            .get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text);
+    const text = 'Поздравляю,' + name + '! Вы успешно подписались';
+    console.log(text);
+    let input_ml = document.getElementById('email');
+    let input_nm = document.getElementById('name');
+
+
+    // console.log(email);
+
+    if (email == "" || name == "") {
+        if (email == "") {
+            input_ml.setAttribute('style', 'border: 2px solid red;');
+        } else if (name == "") {
+            input_nm.setAttribute('style', ' border: 2px solid red;');
+        }
+    } else if (isValidEmail(email)) {
+        alert("ok");
+        input_ml.value = "";
+        input_nm.value = "";
+        // axios
+        // .get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text);
+
+        $.get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text);
     } else {
-        alert("Enter valid email address");
+        alert("enter corect email");
     }
+
 }
-
-
-let send_btn = document.getElementById('send_btn')
-send_btn.addEventListener('click', sendMassege);
 

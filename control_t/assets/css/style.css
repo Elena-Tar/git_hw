@@ -952,7 +952,7 @@ header.fixed .logo {
   border-bottom: 1px solid #2c4058;
 }
 .section_contact .form_data input:hover {
-  border-top: 1px solid #2c4058;
+  border-bottom: 2px solid #0650aa;
 }
 .section_contact .form_data .wrap_btn {
   display: flex;

@@ -41,17 +41,15 @@
 
 
 
-
     <!-- style -->
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/js/plagins/dist/css/lightslider.css">
 
     <link rel="stylesheet" href="assets/js/plagins/lg_all/css/lightgallery.min.css">
+
     <!-- map -->
     <link rel="stylesheet" href="assets/js/plagins/leaflet/leaflet.css">
     <!-- после делаем красивости тоже карта-->
-    <!-- <link rel="stylesheet" href="assets/plugins/Leaflet.markercluster/MarkerCluster.css"> -->
-    <!-- <link rel="stylesheet" href="assets/plugins/Leaflet.markercluster/MarkerCluster.Default.css"> -->
     <link rel="stylesheet" href="assets/js/plagins/Leaflet.markercluster/MarkerCluster.css">
     <link rel="stylesheet" href="assets/js/plagins/Leaflet.markercluster/MarkerCluster.Default.css">
 
@@ -450,11 +448,13 @@
                 <div class="wrapper">
                     <h3>get in touch</h3>
                     <div class="wrap_content">
-                        <div class="address_data">
+                        <div class="address_data" itemscope itemtype="https://schema.org/Organization">
                             <div class="address">
-                                <span class="icon-location_on"></span> <a href="#"> 91 Nolan Extensions Suite 670</a>
+                                <span class="icon-location_on" itemprop="address" itemscope
+                                    itemtype="https://schema.org/PostalAddress"></span> <a href="#"> 91 Nolan Extensions
+                                    Suite 670</a>
                             </div>
-                            <div class="phone">
+                            <div class="phone" itemprop="telephone">
                                 <span class="icon-phone"></span> <a href="tel:+0013568682454"> +001 356-868-2454</a>
                             </div>
                             <div class="email">
@@ -526,7 +526,7 @@
 
 
     <!-- поменять  -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 
 
 
