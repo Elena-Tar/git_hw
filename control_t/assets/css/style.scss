@@ -27,7 +27,18 @@
     font-display: swap;
 }
 
+$clr-white: #fff;
 
+h4 {
+    font-family: 'GothamBook';
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+h3 {
+    font-family: 'Gothambold';
+    text-transform: uppercase;
+}
 
 .container {
     width: 90%;
@@ -46,7 +57,7 @@
 
     &:hover {
         background-color: #a3d0ed;
-        border: 1px solid #fff;
+        border: 1px solid $clr-white;
     }
 
     a {
@@ -69,7 +80,7 @@
         height: 80px;
         border-radius: 50%;
         background-color: transparent;
-        border: 2px solid #fff;
+        border: 2px solid $clr-white;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -81,7 +92,7 @@
         content: "+";
         display: inline-block;
         font-size: 40px;
-        color: #fff;
+        color: $clr-white;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -97,20 +108,28 @@ header {
     height: 150px;
     position: fixed;
     width: 100%;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
     transition: all .2s ease;
     z-index: 999;
     padding-top: 10px;
 
     .flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         height: 100%;
 
         .logo {
             width: 246px;
             height: 60px;
-            fill: #fff;
+            fill: $clr-white;
 
             svg {
                 width: 100%;
@@ -121,9 +140,13 @@ header {
 
     &.fixed {
         height: 60px;
+        -webkit-box-shadow: 0 0 3px #999;
         box-shadow: 0 0 3px #999;
         background: rgb(56, 140, 218);
+        background: -o-linear-gradient(left, rgba(56, 140, 218, 1) 0%, rgba(38, 199, 247, 1) 100%);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(56, 140, 218, 1)), to(rgba(38, 199, 247, 1)));
         background: linear-gradient(90deg, rgba(56, 140, 218, 1) 0%, rgba(38, 199, 247, 1) 100%);
+        -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
 
         .logo {
@@ -134,75 +157,86 @@ header {
 
 
 .main_menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    margin-left: 12px;
 
 
     li {
-        margin-right: 90px;
+        margin-right: 94px;
         position: relative;
 
         &::before {
             content: "";
             display: inline-block;
-            width: 8px;
-            height: 8px;
-            border: 1px solid #fff;
+            width: 6px;
+            height: 6px;
+            border: 1px solid $clr-white;
             border-radius: 50%;
             background-color: transparent;
             position: absolute;
             left: -20px;
             top: 2px;
-
-
-
         }
 
         &:last-child {
             margin-right: 0;
         }
 
+
         a {
-            color: #fff;
+            color: $clr-white;
             text-transform: uppercase;
             text-decoration: none;
             font-size: 14px;
             font-family: 'GothamBook';
             cursor: pointer;
-
-
+            padding: 0 3px;
         }
 
         &:active {
             &::before {
-                background-color: #fff;
+                background-color: $clr-white;
             }
         }
 
         &:hover {
-            border-top: 1px solid #fff;
+            border-top: 1px solid $clr-white;
         }
-
-
     }
 }
 
 .social_networks {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
 
     .social {
-
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 
         li {
             margin-right: 20px;
-            border: 1px solid #fff;
+            border: 1px solid $clr-white;
             border-radius: 50%;
             width: 40px;
             height: 40px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             cursor: pointer;
 
@@ -211,7 +245,7 @@ header {
             }
 
             a {
-                color: #fff;
+                color: $clr-white;
                 text-decoration: none;
 
 
@@ -233,19 +267,18 @@ header {
 
 }
 
-
 .hamburger {
     display: none;
 
     .hamburger-inner {
-        background-color: #fff;
+        background-color: $clr-white;
 
         &::after {
-            background-color: #fff;
+            background-color: $clr-white;
         }
 
         &::before {
-            background-color: #fff;
+            background-color: $clr-white;
         }
     }
 
@@ -258,9 +291,9 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .8);
-    // display: block; //скрыли
     display: none;
-    backdrop-filter: blur(3px); //текст под menu_shadow помутнел
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
     z-index: 10000;
 }
 
@@ -270,9 +303,12 @@ header {
     left: -110%;
     height: 100%;
     width: 100%;
-    max-width: 400px; //на мобильном откроется полностью, а на планшете max откроется на 400px
-    background-color: #fff;
+    max-width: 400px;
+    background-color: $clr-white;
+    -webkit-box-shadow: 0 0 5px #000;
     box-shadow: 0 0 5px #000;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
     transition: all .2s ease;
     z-index: 10001;
 }
@@ -285,36 +321,39 @@ header {
     left: 0;
 }
 
-//стилизуем меню. высота li 40px это минимум чтобы нормально можно было в него попасть
 .mobile_menu {
     height: calc(100% - 78px);
     overflow-y: scroll;
-    background-color: #d2f0ed;
+    background-color: $clr-white;
 
     li {
-        border-bottom: 1px solid darkblue;
+        border-bottom: 1px solid #185ba9;
 
         a {
             display: inline-block;
             padding: 15px;
             font-size: 18px;
-            line-height: 24px; //можем поставить. если нужен
+            line-height: 24px;
             text-decoration: none;
             text-transform: uppercase;
             color: #232323;
             width: 100%;
-            background-color: #d2f0ed;
+            background-color: $clr-white;
 
             &:hover {
                 background-color: #28c0f4;
-                color: #fff;
+                color: $clr-white;
             }
         }
     }
 }
 
 .mmb_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 16px;
     background-color: #7e5aff;
@@ -323,7 +362,7 @@ header {
     .logo {
         width: 246px;
         height: 40px;
-        fill: #fff;
+        fill: $clr-white;
 
         svg {
             width: 100%;
@@ -334,8 +373,6 @@ header {
 }
 
 
-
-/*слайдер 1*/
 .section_simple {
 
     .slider_wrap {
@@ -345,12 +382,17 @@ header {
 
         .slider_item {
             height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
             justify-content: start;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             text-align: center;
-            text-transform: uppercase;
-            color: #fff;
+            color: $clr-white;
 
             .bg_img_2 {
                 width: 100%;
@@ -362,20 +404,13 @@ header {
             h3 {
                 margin-top: 350px;
                 font-size: 80px;
-                font-family: 'Gothambold';
                 letter-spacing: 3.6px;
-
             }
 
             h4 {
                 padding-top: 20px;
-                font-size: 18px;
-                font-family: 'GothamBook';
                 letter-spacing: 5.6px;
-
             }
-
-
         }
 
         .lSSlideOuter {
@@ -385,41 +420,44 @@ header {
                 top: 36%;
                 right: 0;
 
-
                 li {
                     height: 48px;
                     display: block;
 
-
                     a {
                         background-color: transparent;
-                        border: 1px solid #fff;
+                        border: 1px solid $clr-white;
 
                         &:focus {
-                            background-color: #fff;
+                            background-color: $clr-white;
                         }
 
                         &:hover {
-                            background-color: #fff;
+                            background-color: $clr-white;
                         }
                     }
                 }
             }
         }
-
     }
 
     .scroll {
         height: 40px;
         width: 40px;
         border-radius: 50%;
-        border: 1px solid #fff;
+        border: 1px solid $clr-white;
         position: relative;
         top: -90px;
         left: 50%;
         margin-left: -20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         cursor: pointer;
 
@@ -428,10 +466,11 @@ header {
             display: block;
             width: 6px;
             height: 6px;
-            border-bottom: 2px solid #fff;
-            border-left: 2px solid #fff;
+            border-bottom: 2px solid $clr-white;
+            border-left: 2px solid $clr-white;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
-
         }
 
         &:hover {
@@ -444,7 +483,6 @@ header {
         }
     }
 }
-
 
 .section_what_we_do {
     padding-top: 88px;
@@ -475,8 +513,13 @@ header {
     }
 
     .center {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         padding-top: 90px;
         padding-bottom: 122px;
@@ -500,6 +543,7 @@ header {
             img {
                 width: 100%;
                 height: 100%;
+                -o-object-fit: cover;
                 object-fit: cover;
             }
         }
@@ -510,17 +554,13 @@ header {
             h4 {
                 padding-top: 56px;
                 font-size: 22px;
-                text-transform: uppercase;
                 color: #2c4058;
-                font-family: 'GothamBook';
             }
 
             h3 {
                 font-size: 44px;
                 color: #2c4058;
                 text-align: left;
-                font-family: 'Gothambold';
-                text-transform: uppercase;
             }
 
             p {
@@ -545,13 +585,17 @@ header {
                     padding-left: 4px;
                     cursor: pointer;
                 }
-
             }
         }
     }
 
     .international_commerce_center {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
 
         .pic {
@@ -569,11 +613,9 @@ header {
                 left: 41%;
                 top: -70px;
             }
-
         }
     }
 }
-
 
 .section_latest_news {
     overflow: hidden;
@@ -584,17 +626,19 @@ header {
         background-repeat: no-repeat;
         background-size: cover;
         padding-top: 166px;
-        padding-bottom: 132px;
+        padding-bottom: 134px;
     }
 
     .title {
         text-transform: uppercase;
         font-size: 44px;
-        color: #fff;
+        color: $clr-white;
         text-align: center;
         position: relative;
-        font-family: 'Gotham Medium Regular';
-        letter-spacing: -1px;
+        // font-family: 'Gotham Medium Regular';
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        letter-spacing: -3px;
 
         &::before {
             content: "";
@@ -604,8 +648,8 @@ header {
             position: absolute;
             top: -30px;
             left: center;
-            margin-left: 110px;
-            background-color: #fff;
+            margin-left: 78px;
+            background-color: $clr-white;
         }
 
     }
@@ -619,7 +663,7 @@ header {
                 max-width: 370px;
                 height: 514px;
                 position: relative;
-                background-color: #fff;
+                background-color: $clr-white;
 
                 .pic {
                     width: 100%;
@@ -632,10 +676,10 @@ header {
                             height: 100%;
 
                             &:hover {
+                                -webkit-box-shadow: 0 3px 5px #000;
                                 box-shadow: 0 3px 5px #000;
                             }
                         }
-
                     }
                 }
 
@@ -675,7 +719,11 @@ header {
                 }
 
                 .autor {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
+                    -webkit-box-pack: start;
+                    -ms-flex-pack: start;
                     justify-content: flex-start;
                     position: absolute;
                     bottom: 24px;
@@ -683,7 +731,6 @@ header {
 
                     .pic_autor {
                         padding: 0 20px;
-
                     }
 
                     .text {
@@ -719,7 +766,7 @@ header {
                 svg {
                     width: 100%;
                     height: 100%;
-                    fill: #fff;
+                    fill: $clr-white;
                 }
             }
 
@@ -739,13 +786,15 @@ header {
             .icon_arrow {
                 width: 40px;
                 height: 40px;
-                fill: #fff;
+                fill: $clr-white;
 
 
                 svg {
                     width: 100%;
                     height: 100%;
-                    fill: #fff;
+                    fill: $clr-white;
+                    -webkit-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
             }
@@ -768,14 +817,14 @@ header {
 
                     a {
                         background-color: transparent;
-                        border: 1px solid #fff;
+                        border: 1px solid $clr-white;
 
                         &:focus {
-                            background-color: #fff;
+                            background-color: $clr-white;
                         }
 
                         &:hover {
-                            background-color: #fff;
+                            background-color: $clr-white;
                         }
                     }
                 }
@@ -789,7 +838,6 @@ header {
     padding-bottom: 140px;
 
     h3 {
-        text-transform: uppercase;
         font-size: 44px;
         color: #2c4058;
         text-align: center;
@@ -802,7 +850,7 @@ header {
             width: 100px;
             height: 1px;
             position: absolute;
-            top: -34px;
+            top: -30px;
             left: center;
             margin-left: 60px;
             background-color: #2c4058;
@@ -810,7 +858,7 @@ header {
     }
 
     .wrap_gallery {
-        padding-top: 90px;
+        padding-top: 92px;
         padding-bottom: 60px;
 
 
@@ -820,7 +868,7 @@ header {
             grid-template-rows: repeat(2, 1fr);
             grid-column-gap: 10px;
             grid-row-gap: 10px;
-            background-color: #fff;
+            background-color: $clr-white;
 
             .big {
                 grid-column: 1/ 2;
@@ -830,6 +878,7 @@ header {
                 img {
                     width: 100%;
                     height: 100%;
+                    -o-object-fit: cover;
                     object-fit: cover;
                 }
             }
@@ -841,6 +890,7 @@ header {
                 img {
                     width: 100%;
                     height: 100%;
+                    -o-object-fit: cover;
                     object-fit: cover;
                 }
             }
@@ -852,6 +902,7 @@ header {
                 img {
                     width: 100%;
                     height: 100%;
+                    -o-object-fit: cover;
                     object-fit: cover;
                 }
             }
@@ -863,6 +914,7 @@ header {
                 img {
                     width: 100%;
                     height: 100%;
+                    -o-object-fit: cover;
                     object-fit: cover;
                 }
             }
@@ -874,6 +926,7 @@ header {
                 img {
                     width: 100%;
                     height: 100%;
+                    -o-object-fit: cover;
                     object-fit: cover;
                 }
             }
@@ -968,6 +1021,7 @@ header {
             img {
                 width: 100%;
                 height: 100%;
+                -o-object-fit: cover;
                 object-fit: cover;
             }
         }
@@ -980,33 +1034,33 @@ header {
             left: 0;
             top: 0;
             background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
+            color: $clr-white;
             text-align: center;
-            line-height: 300px;
             font-size: 24px;
-            text-decoration: none;
-            font-family: Arial, Helvetica, sans-serif;
             opacity: 0;
+            -webkit-transition: all .2s ease;
+            -o-transition: all .2s ease;
             transition: all .2s ease;
 
             &:hover {
                 opacity: 1;
             }
-
         }
 
         .wrapper {
             width: 90%;
             max-width: 770px;
             margin: 0 auto;
-            // width: calc((100% * 770) / 1170);
             position: absolute;
-            background-color: #fff;
+            background-color: $clr-white;
             top: 64%;
             left: 50%;
+            -webkit-transform: translate(-50%, -10%);
+            -ms-transform: translate(-50%, -10%);
             transform: translate(-50%, -10%);
             padding-top: 62px;
             padding-bottom: 76px;
+            -webkit-box-shadow: 0 3px 5px #858585;
             box-shadow: 0 3px 5px #858585;
             z-index: 2;
 
@@ -1024,7 +1078,6 @@ header {
             h3 {
                 font-size: 44px;
                 color: #2c4058;
-                text-transform: uppercase;
                 text-align: center;
                 font-family: 'Gotham Medium Regular';
                 position: relative;
@@ -1033,8 +1086,13 @@ header {
         }
 
         .wrap_content {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
             padding-top: 10px;
         }
@@ -1111,28 +1169,58 @@ header {
         margin-right: 60px;
 
         input {
-            margin-top: 4px;
-            height: 74px;
+            margin-top: 16px;
+            height: 60px;
             width: 100%;
             border-top: none;
             border-left: none;
             border-right: none;
+            outline: none;
+            background-color: $clr-white;
+            color: #2c4058;
+            font-size: 18px;
+            font-family: 'GothamBook';
+            padding-left: 20px;
 
-            &:active {
-                border-top: none;
-                border-left: none;
-                border-right: none;
-                border-bottom: 1px solid #2c4058;
+            &::-webkit-input-placeholder {
+                color: #4b5562;
+            }
+
+            &::-moz-placeholder {
+                color: #4b5562;
+            }
+
+            &:-ms-input-placeholder {
+                color: #4b5562;
+            }
+
+            &::-ms-input-placeholder {
+                color: #4b5562;
+            }
+
+            &::placeholder {
+                color: #4b5562;
+            }
+
+            &:focus {
+                border-bottom: 2px solid #7e5aff;
+                border-top: 2px solid #7e5aff;
+                border-left: 2px solid #7e5aff;
+                border-right: 2px solid #7e5aff;
             }
 
             &:hover {
-                border-bottom: 2px solid #0650aa;
-                ;
+                border-bottom: 2px solid #7e5aff;
+
             }
         }
 
         .wrap_btn {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
             justify-content: flex-end;
 
             .button_submit {
@@ -1162,8 +1250,15 @@ footer {
 
     .logo_social {
 
+        display: -webkit-box;
+
+        display: -ms-flexbox;
+
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 
         .wrap_logo {
@@ -1172,7 +1267,7 @@ footer {
             .logo {
                 width: 246px;
                 height: 60px;
-                fill: #fff;
+                fill: $clr-white;
 
                 svg {
                     width: 100%;
@@ -1188,23 +1283,25 @@ footer {
     }
 
     .text {
-        padding-top: 30px;
+        padding-top: 38px;
         font-family: 'GothamBook';
-        color: #fff;
+        color: $clr-white;
         font-size: 14px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 
         .span1 {
             padding-right: 20px;
-            border-right: 1px solid #fff;
+            border-right: 1px solid $clr-white;
         }
 
         .span2 {
             margin-left: 20px;
         }
     }
-
 }
 
 
@@ -1383,7 +1480,10 @@ footer {
 
 @media screen and (max-width:810px) {
     .section_gallery .wrap_gallery .gallery_grid {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 
@@ -1455,8 +1555,14 @@ footer {
 
 @media screen and (max-width:530px) {
     footer .text {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 

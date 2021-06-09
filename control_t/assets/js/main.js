@@ -1,7 +1,4 @@
-/*шапка и меню*/
-
 $(window).on('scroll', function () {
-    // console.log($(window).scrollTop());
     if ($(window).scrollTop() > 100) {
         $("header").addClass("fixed");
     } else {
@@ -9,9 +6,9 @@ $(window).on('scroll', function () {
     }
 });
 
-$(".hamburger, .menu_shadow").on('click', function () {   //кликая на .hamburger 
-    $(".hamburger").toggleClass("is-active");              // добавляется сlass "is-active"
-    $("body").toggleClass("open");                           // добавляется сlass "open"
+$(".hamburger, .menu_shadow").on('click', function () {
+    $(".hamburger").toggleClass("is-active");
+    $("body").toggleClass("open");
 });
 
 $(".mobile_menu a").on('click', function () {
@@ -43,20 +40,20 @@ $(".modal_close").on('click', function () {
 $(function () {
     const slider = $('.slider').lightSlider({
         item: 1,
-        // auto: true,
         controls: false,
         vertical: true,
         slideMargin: 0,
-        loop: true, //по кольцу через каждые 3 сек
+        loop: true,
         pause: 3000,
         verticalHeight: 800,
     });
 });
+
 /**кнопка */
-$(".scroll").click(function () { // откуда кливаем
+$(".scroll").click(function () {
     $('html, body').animate({
-        scrollTop: $(".section_what_we_do").offset().top  // класс объекта к которому приезжаем
-    }, 1000); // Скорость прокрутки
+        scrollTop: $(".section_what_we_do").offset().top
+    }, 1000);
 });
 
 
@@ -88,7 +85,6 @@ $(document).ready(function () {
 lightGallery(document.getElementById('animated-thumbnails'), {
     thumbnail: true,
 });
-
 
 
 
@@ -144,7 +140,7 @@ let LeafIcon = L.Icon.extend({
 /*форма залогинивания*/
 
 
-function isValidEmail(email) {   //регулярка проверки валидности email (скопировали с github)
+function isValidEmail(email) {
     let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
 }
@@ -166,9 +162,6 @@ function validateForm(e) {
     let input_ml = document.getElementById('email');
     let input_nm = document.getElementById('name');
 
-
-    // console.log(email);
-
     if (email == "" || name == "") {
         if (email == "") {
             input_ml.setAttribute('style', 'border: 2px solid red;');
@@ -176,12 +169,8 @@ function validateForm(e) {
             input_nm.setAttribute('style', ' border: 2px solid red;');
         }
     } else if (isValidEmail(email)) {
-        alert("ok");
         input_ml.value = "";
         input_nm.value = "";
-        // axios
-        // .get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text);
-
         $.get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text);
     } else {
         alert("enter corect email");

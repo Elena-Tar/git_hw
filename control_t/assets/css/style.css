@@ -127,6 +127,17 @@ body {
   font-style: normal;
   font-display: swap;
 }
+h4 {
+  font-family: "GothamBook";
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+h3 {
+  font-family: "Gothambold";
+  text-transform: uppercase;
+}
+
 .container {
   width: 90%;
   max-width: 1170px;
@@ -187,13 +198,21 @@ header {
   height: 150px;
   position: fixed;
   width: 100%;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   z-index: 999;
   padding-top: 10px;
 }
 header .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100%;
 }
@@ -208,9 +227,13 @@ header .flex .logo svg {
 }
 header.fixed {
   height: 60px;
+  -webkit-box-shadow: 0 0 3px #999;
   box-shadow: 0 0 3px #999;
   background: #388cda;
+  background: -o-linear-gradient(left, #388cda 0%, #26c7f7 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#388cda), to(#26c7f7));
   background: linear-gradient(90deg, #388cda 0%, #26c7f7 100%);
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
 header.fixed .logo {
@@ -218,18 +241,23 @@ header.fixed .logo {
 }
 
 .main_menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
+  margin-left: 12px;
 }
 .main_menu ul li {
-  margin-right: 90px;
+  margin-right: 94px;
   position: relative;
 }
 .main_menu ul li::before {
   content: "";
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border: 1px solid #fff;
   border-radius: 50%;
   background-color: transparent;
@@ -247,6 +275,7 @@ header.fixed .logo {
   font-size: 14px;
   font-family: "GothamBook";
   cursor: pointer;
+  padding: 0 3px;
 }
 .main_menu ul li:active::before {
   background-color: #fff;
@@ -256,10 +285,16 @@ header.fixed .logo {
 }
 
 .social_networks {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .social_networks .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .social_networks .social li {
@@ -268,8 +303,14 @@ header.fixed .logo {
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
 }
@@ -311,6 +352,7 @@ header.fixed .logo {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   z-index: 10000;
 }
@@ -323,7 +365,10 @@ header.fixed .logo {
   width: 100%;
   max-width: 400px;
   background-color: #fff;
+  -webkit-box-shadow: 0 0 5px #000;
   box-shadow: 0 0 5px #000;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   z-index: 10001;
 }
@@ -339,10 +384,10 @@ header.fixed .logo {
 .mobile_menu {
   height: calc(100% - 78px);
   overflow-y: scroll;
-  background-color: #d2f0ed;
+  background-color: #fff;
 }
 .mobile_menu li {
-  border-bottom: 1px solid darkblue;
+  border-bottom: 1px solid #185ba9;
 }
 .mobile_menu li a {
   display: inline-block;
@@ -353,7 +398,7 @@ header.fixed .logo {
   text-transform: uppercase;
   color: #232323;
   width: 100%;
-  background-color: #d2f0ed;
+  background-color: #fff;
 }
 .mobile_menu li a:hover {
   background-color: #28c0f4;
@@ -361,7 +406,11 @@ header.fixed .logo {
 }
 
 .mmb_top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 16px;
   background-color: #7e5aff;
@@ -377,7 +426,6 @@ header.fixed .logo {
   height: 100%;
 }
 
-/*слайдер 1*/
 .section_simple .slider_wrap {
   position: relative;
   height: 100%;
@@ -385,11 +433,16 @@ header.fixed .logo {
 }
 .section_simple .slider_wrap .slider_item {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  text-transform: uppercase;
   color: #fff;
 }
 .section_simple .slider_wrap .slider_item .bg_img_2 {
@@ -401,13 +454,10 @@ header.fixed .logo {
 .section_simple .slider_wrap .slider_item h3 {
   margin-top: 350px;
   font-size: 80px;
-  font-family: "Gothambold";
   letter-spacing: 3.6px;
 }
 .section_simple .slider_wrap .slider_item h4 {
   padding-top: 20px;
-  font-size: 18px;
-  font-family: "GothamBook";
   letter-spacing: 5.6px;
 }
 .section_simple .slider_wrap .lSSlideOuter .lSpg {
@@ -438,8 +488,14 @@ header.fixed .logo {
   top: -90px;
   left: 50%;
   margin-left: -20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
 }
@@ -450,6 +506,8 @@ header.fixed .logo {
   height: 6px;
   border-bottom: 2px solid #fff;
   border-left: 2px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .section_simple .scroll:hover {
@@ -487,8 +545,13 @@ header.fixed .logo {
   background-color: #2c4058;
 }
 .section_what_we_do .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 90px;
   padding-bottom: 122px;
@@ -511,6 +574,7 @@ header.fixed .logo {
 .section_what_we_do .center .pic img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .section_what_we_do .center .content {
@@ -519,16 +583,12 @@ header.fixed .logo {
 .section_what_we_do .center .content h4 {
   padding-top: 56px;
   font-size: 22px;
-  text-transform: uppercase;
   color: #2c4058;
-  font-family: "GothamBook";
 }
 .section_what_we_do .center .content h3 {
   font-size: 44px;
   color: #2c4058;
   text-align: left;
-  font-family: "Gothambold";
-  text-transform: uppercase;
 }
 .section_what_we_do .center .content p {
   padding-top: 30px;
@@ -552,7 +612,12 @@ header.fixed .logo {
   cursor: pointer;
 }
 .section_what_we_do .international_commerce_center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
 .section_what_we_do .international_commerce_center .pic {
@@ -580,7 +645,7 @@ header.fixed .logo {
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 166px;
-  padding-bottom: 132px;
+  padding-bottom: 134px;
 }
 .section_latest_news .title {
   text-transform: uppercase;
@@ -588,8 +653,9 @@ header.fixed .logo {
   color: #fff;
   text-align: center;
   position: relative;
-  font-family: "Gotham Medium Regular";
-  letter-spacing: -1px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: -3px;
 }
 .section_latest_news .title::before {
   content: "";
@@ -599,7 +665,7 @@ header.fixed .logo {
   position: absolute;
   top: -30px;
   left: center;
-  margin-left: 110px;
+  margin-left: 78px;
   background-color: #fff;
 }
 .section_latest_news .slider_wrap_1 {
@@ -623,6 +689,7 @@ header.fixed .logo {
   height: 100%;
 }
 .section_latest_news .slider_wrap_1 .cs-hidden .item .pic a img:hover {
+  -webkit-box-shadow: 0 3px 5px #000;
   box-shadow: 0 3px 5px #000;
 }
 .section_latest_news .slider_wrap_1 .cs-hidden .item a {
@@ -651,7 +718,11 @@ header.fixed .logo {
   font-weight: 400;
 }
 .section_latest_news .slider_wrap_1 .cs-hidden .item .autor {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   position: absolute;
   bottom: 24px;
@@ -704,6 +775,8 @@ header.fixed .logo {
   width: 100%;
   height: 100%;
   fill: #fff;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .section_latest_news .slider_wrap_1 #slider_next:hover svg {
@@ -732,7 +805,6 @@ header.fixed .logo {
   padding-bottom: 140px;
 }
 .section_gallery h3 {
-  text-transform: uppercase;
   font-size: 44px;
   color: #2c4058;
   text-align: center;
@@ -745,13 +817,13 @@ header.fixed .logo {
   width: 100px;
   height: 1px;
   position: absolute;
-  top: -34px;
+  top: -30px;
   left: center;
   margin-left: 60px;
   background-color: #2c4058;
 }
 .section_gallery .wrap_gallery {
-  padding-top: 90px;
+  padding-top: 92px;
   padding-bottom: 60px;
 }
 .section_gallery .wrap_gallery .gallery_grid {
@@ -770,6 +842,7 @@ header.fixed .logo {
 .section_gallery .wrap_gallery .gallery_grid .big img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .section_gallery .wrap_gallery .gallery_grid .small_1 {
@@ -779,6 +852,7 @@ header.fixed .logo {
 .section_gallery .wrap_gallery .gallery_grid .small_1 img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .section_gallery .wrap_gallery .gallery_grid .small_2 {
@@ -788,6 +862,7 @@ header.fixed .logo {
 .section_gallery .wrap_gallery .gallery_grid .small_2 img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .section_gallery .wrap_gallery .gallery_grid .small_3 {
@@ -797,6 +872,7 @@ header.fixed .logo {
 .section_gallery .wrap_gallery .gallery_grid .small_3 img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .section_gallery .wrap_gallery .gallery_grid .small_4 {
@@ -806,6 +882,7 @@ header.fixed .logo {
 .section_gallery .wrap_gallery .gallery_grid .small_4 img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .section_gallery .button__see_more {
@@ -823,6 +900,7 @@ header.fixed .logo {
 .section_contact .wrap_map #my_map img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .section_contact .wrap_map #map_link {
@@ -835,11 +913,10 @@ header.fixed .logo {
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   text-align: center;
-  line-height: 300px;
   font-size: 24px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
   opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 .section_contact .wrap_map #map_link:hover {
@@ -853,9 +930,12 @@ header.fixed .logo {
   background-color: #fff;
   top: 64%;
   left: 50%;
+  -webkit-transform: translate(-50%, -10%);
+  -ms-transform: translate(-50%, -10%);
   transform: translate(-50%, -10%);
   padding-top: 62px;
   padding-bottom: 76px;
+  -webkit-box-shadow: 0 3px 5px #858585;
   box-shadow: 0 3px 5px #858585;
   z-index: 2;
 }
@@ -870,14 +950,18 @@ header.fixed .logo {
 .section_contact .wrap_map .wrapper h3 {
   font-size: 44px;
   color: #2c4058;
-  text-transform: uppercase;
   text-align: center;
   font-family: "Gotham Medium Regular";
   position: relative;
 }
 .section_contact .wrap_map .wrap_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 10px;
 }
@@ -938,24 +1022,49 @@ header.fixed .logo {
   margin-right: 60px;
 }
 .section_contact .form_data input {
-  margin-top: 4px;
-  height: 74px;
+  margin-top: 16px;
+  height: 60px;
   width: 100%;
   border-top: none;
   border-left: none;
   border-right: none;
+  outline: none;
+  background-color: #fff;
+  color: #2c4058;
+  font-size: 18px;
+  font-family: "GothamBook";
+  padding-left: 20px;
 }
-.section_contact .form_data input:active {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #2c4058;
+.section_contact .form_data input::-webkit-input-placeholder {
+  color: #4b5562;
+}
+.section_contact .form_data input::-moz-placeholder {
+  color: #4b5562;
+}
+.section_contact .form_data input:-ms-input-placeholder {
+  color: #4b5562;
+}
+.section_contact .form_data input::-ms-input-placeholder {
+  color: #4b5562;
+}
+.section_contact .form_data input::placeholder {
+  color: #4b5562;
+}
+.section_contact .form_data input:focus {
+  border-bottom: 2px solid #7e5aff;
+  border-top: 2px solid #7e5aff;
+  border-left: 2px solid #7e5aff;
+  border-right: 2px solid #7e5aff;
 }
 .section_contact .form_data input:hover {
-  border-bottom: 2px solid #0650aa;
+  border-bottom: 2px solid #7e5aff;
 }
 .section_contact .form_data .wrap_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .section_contact .form_data .wrap_btn .button_submit {
@@ -977,8 +1086,13 @@ footer .content {
   margin: 0 auto;
 }
 footer .logo_social {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 footer .logo_social .wrap_logo {
@@ -998,11 +1112,14 @@ footer .social_networks {
   padding-top: 10px;
 }
 footer .text {
-  padding-top: 30px;
+  padding-top: 38px;
   font-family: "GothamBook";
   color: #fff;
   font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 footer .text .span1 {
@@ -1159,7 +1276,10 @@ footer .text .span2 {
 }
 @media screen and (max-width: 810px) {
   .section_gallery .wrap_gallery .gallery_grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 
@@ -1225,8 +1345,14 @@ footer .text .span2 {
 }
 @media screen and (max-width: 530px) {
   footer .text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 }

@@ -1,8 +1,6 @@
 "use strict";
 
-/*шапка и меню*/
 $(window).on('scroll', function () {
-  // console.log($(window).scrollTop());
   if ($(window).scrollTop() > 100) {
     $("header").addClass("fixed");
   } else {
@@ -10,10 +8,8 @@ $(window).on('scroll', function () {
   }
 });
 $(".hamburger, .menu_shadow").on('click', function () {
-  //кликая на .hamburger 
-  $(".hamburger").toggleClass("is-active"); // добавляется сlass "is-active"
-
-  $("body").toggleClass("open"); // добавляется сlass "open"
+  $(".hamburger").toggleClass("is-active");
+  $("body").toggleClass("open");
 });
 $(".mobile_menu a").on('click', function () {
   $(".hamburger").removeClass("is-active");
@@ -43,12 +39,10 @@ $(".modal_close").on('click', function () {
 $(function () {
   var slider = $('.slider').lightSlider({
     item: 1,
-    // auto: true,
     controls: false,
     vertical: true,
     slideMargin: 0,
     loop: true,
-    //по кольцу через каждые 3 сек
     pause: 3000,
     verticalHeight: 800
   });
@@ -56,11 +50,9 @@ $(function () {
 /**кнопка */
 
 $(".scroll").click(function () {
-  // откуда кливаем
   $('html, body').animate({
-    scrollTop: $(".section_what_we_do").offset().top // класс объекта к которому приезжаем
-
-  }, 1000); // Скорость прокрутки
+    scrollTop: $(".section_what_we_do").offset().top
+  }, 1000);
 });
 $(document).ready(function () {
   var slider_1 = $('#autoWidth').lightSlider({
@@ -131,27 +123,36 @@ var LeafIcon = L.Icon.extend({
 /*форма залогинивания*/
 
 function isValidEmail(email) {
-  //регулярка проверки валидности email (скопировали с github)
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
 }
 
-var email = document.getElementById('email');
-var name_1 = document.getElementById('name');
+var send_btn = document.getElementById('send_btn');
+send_btn.addEventListener('click', validateForm);
 
-function sendMassege(e) {
+function validateForm(e) {
+  debugger;
   e.preventDefault();
+  var email = document.getElementById('email').value;
+  var name = document.getElementById('name').value;
   var BOT_TOKEN = '1812836695:AAH79Qc2DHvUC8sWlVFylnBVznw4r7gCM7A';
   var CHAT_ID = '-1001285100881';
-  var text = 'Поздравляю,' + name_1.value + '! Вы успешно подписались';
+  var text = 'Поздравляю,' + name + '! Вы успешно подписались';
+  console.log(text);
+  var input_ml = document.getElementById('email');
+  var input_nm = document.getElementById('name');
 
-  if (isValidEmail(email)) {
-    console.log(text);
-    axios.get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text);
+  if (email == "" || name == "") {
+    if (email == "") {
+      input_ml.setAttribute('style', 'border: 2px solid red;');
+    } else if (name == "") {
+      input_nm.setAttribute('style', ' border: 2px solid red;');
+    }
+  } else if (isValidEmail(email)) {
+    input_ml.value = "";
+    input_nm.value = "";
+    $.get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text);
   } else {
-    alert("Enter valid email address");
+    alert("enter corect email");
   }
 }
-
-var send_btn = document.getElementById('send_btn');
-send_btn.addEventListener('click', sendMassege);
