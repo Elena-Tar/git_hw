@@ -39,6 +39,7 @@ $(".modal_close").on('click', function () {
 $(function () {
   var slider = $('.slider').lightSlider({
     item: 1,
+    auto: true,
     controls: false,
     vertical: true,
     slideMargin: 0,
