@@ -1,5 +1,7 @@
 @import 'reset';
 
+@import 'reset';
+
 @font-face {
     font-family: 'Hans Kendriek';
     src: url('../font/HansKendrick-Regular.woff2') format('woff');
@@ -37,6 +39,7 @@ body {
 // grid-column-gap: 56px;
 .card {
     position: relative;
+    border: none;
 }
 
 
