@@ -96,7 +96,7 @@ class Marker {
         for (let i = 0; i < text.length; i++) {
             if (a !== 0) {
                 if (text[i] !== " ") {
-                    a = a - 1;
+                    a = a - 0.5;
                 }
                 str += text[i];
             } else {
