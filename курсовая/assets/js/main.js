@@ -24,15 +24,10 @@ $(document).ready(function () {
 
 
     /*modal*/
-    // $(".btn_hero").on('click', function (e) {                      //почему не работает, я хочу на всю кнопку нажимать
-    //     e.preventDefault();
-    //     console.log($(this).children(".modal_link"));
-    //     $('#num').addClass("open");
-    // });
-
-    $(".modal_link").on('click', function (e) {
+    $(".btn_hero").on('click', function (e) {                      //почему не работает, я хочу на всю кнопку нажимать
         e.preventDefault();
-        $($(this).attr("href")).addClass("open");
+        console.log($(this).children(".modal_link"));
+        $('#my_modal').addClass("open");
     });
 
     $(".modal_close").on('click', function () {
