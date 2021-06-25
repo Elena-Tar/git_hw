@@ -90,18 +90,6 @@ $(document).ready(function () {
       $(this).siblings('.form-text').text("");
     }
   });
-  $.ajax({
-    // dataType: "json",
-    url: "team.json",
-    // data: data,
-    success: function success(data) {
-      var html = '';
-      data.forEach(function (element) {
-        html += "\n                <li>\n                <div class=\"slider_item\">\n                    <div class=\"null\">\n                        <div class=\"wrap_pic\">\n                            <img class=\"round\" src=\"assets/img/".concat(element.photo, ".png\" alt=\"#\">\n                        </div>\n                    </div>\n                    <div class=\"content\">\n                        <h3>").concat(element.name, "</h3>\n                        <h4>").concat(element.position, "</h4>\n                        <div class=\"wrap_socials\">\n                        \n                        <ul>\n                            <li>\n                                <a href=\"https://www.behance.net/\" target=\"_blank\" rel=\"nofollow\" title=\"Behance\">\n                                    <svg>\n                                        <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.b, "\"></use>\n                                    </svg>\n                                </a>\n                            </li>\n                            <li>\n                                <a href=\"https://www.linkedin.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Linkedin\">\n                                    <svg>\n                                        <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.l, "\"></use>\n                                    </svg>\n                                </a>\n        \n                            </li>\n                            <li>\n                                <a href=\"https://www.google.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Google\">\n                                    <svg>\n                                        <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.g, "\"></use>\n                                    </svg>\n                                </a>\n                            </li>\n                            <li>\n                                <a href=\"https://www.facebook.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Facebook\">\n                                    <svg>\n                                        <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.f, "\"></use>\n                                    </svg>\n                                </a>\n                            </li>\n                            <li>\n                                <a href=\"https://twitter.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Twitter\">\n                                    <svg>\n                                        <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.t, "\"></use>\n                                    </svg>\n                                </a>\n                            </li>\n                         </ul>\n                        </div>\n                    </div>\n                </div>\n\n            </li>\n            ");
-      });
-      $(".one").html(html);
-    }
-  });
 });
 
 function isValidEmail(email) {
@@ -157,4 +145,16 @@ window.addEventListener("scroll", function () {
   // console.log('Offset * 0.7: ' + offset * 0.7);
 
   parallax.style.backgroundPositionY = offset * 0.7 + "px";
+});
+$.ajax({
+  // dataType: "json",
+  url: "team.json",
+  // data: data,
+  success: function success(data) {
+    var html = '';
+    data.forEach(function (element) {
+      html += "\n            <li>\n            <div class=\"slider_item\">\n                <div class=\"null\">\n                    <div class=\"wrap_pic\">\n                        <img class=\"round\" src=\"assets/img/".concat(element.photo, ".png\" alt=\"#\">\n                    </div>\n                </div>\n                <div class=\"content\">\n                    <h3>").concat(element.name, "</h3>\n                    <h4>").concat(element.position, "</h4>\n                    <div class=\"wrap_socials\">\n                    \n                    <ul>\n                        <li>\n                            <a href=\"https://www.behance.net/\" target=\"_blank\" rel=\"nofollow\" title=\"Behance\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.b, "\"></use>\n                                </svg>\n                            </a>\n                        </li>\n                        <li>\n                            <a href=\"https://www.linkedin.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Linkedin\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.l, "\"></use>\n                                </svg>\n                            </a>\n    \n                        </li>\n                        <li>\n                            <a href=\"https://www.google.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Google\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.g, "\"></use>\n                                </svg>\n                            </a>\n                        </li>\n                        <li>\n                            <a href=\"https://www.facebook.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Facebook\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.f, "\"></use>\n                                </svg>\n                            </a>\n                        </li>\n                        <li>\n                            <a href=\"https://twitter.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Twitter\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.t, "\"></use>\n                                </svg>\n                            </a>\n                        </li>\n                     </ul>\n                    </div>\n                </div>\n            </div>\n\n        </li>\n        ");
+    });
+    $(".one").html(html);
+  }
 });

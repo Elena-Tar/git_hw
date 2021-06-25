@@ -96,74 +96,7 @@ $(document).ready(function () {
         }
     });
 
-    $.ajax({
-        // dataType: "json",
-        url: "team.json",
-        // data: data,
-        success: function (data) {
-            let html = '';
-            data.forEach(element => {
-                html += `
-                <li>
-                <div class="slider_item">
-                    <div class="null">
-                        <div class="wrap_pic">
-                            <img class="round" src="assets/img/${element.photo}.png" alt="#">
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>${element.name}</h3>
-                        <h4>${element.position}</h4>
-                        <div class="wrap_socials">
-                        
-                        <ul>
-                            <li>
-                                <a href="https://www.behance.net/" target="_blank" rel="nofollow" title="Behance">
-                                    <svg>
-                                        <use xlink:href="assets/svg/sprite.svg#${element.social.b}"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/" target="_blank" rel="nofollow" title="Linkedin">
-                                    <svg>
-                                        <use xlink:href="assets/svg/sprite.svg#${element.social.l}"></use>
-                                    </svg>
-                                </a>
-        
-                            </li>
-                            <li>
-                                <a href="https://www.google.com/" target="_blank" rel="nofollow" title="Google">
-                                    <svg>
-                                        <use xlink:href="assets/svg/sprite.svg#${element.social.g}"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook">
-                                    <svg>
-                                        <use xlink:href="assets/svg/sprite.svg#${element.social.f}"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/" target="_blank" rel="nofollow" title="Twitter">
-                                    <svg>
-                                        <use xlink:href="assets/svg/sprite.svg#${element.social.t}"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                         </ul>
-                        </div>
-                    </div>
-                </div>
 
-            </li>
-            `;
-            });
-            $(".one").html(html);
-        }
-    });
 
 
 
@@ -253,7 +186,74 @@ window.addEventListener("scroll", function () {
 
 
 
+$.ajax({
+    // dataType: "json",
+    url: "team.json",
+    // data: data,
+    success: function (data) {
+        let html = '';
+        data.forEach(element => {
+            html += `
+            <li>
+            <div class="slider_item">
+                <div class="null">
+                    <div class="wrap_pic">
+                        <img class="round" src="assets/img/${element.photo}.png" alt="#">
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>${element.name}</h3>
+                    <h4>${element.position}</h4>
+                    <div class="wrap_socials">
+                    
+                    <ul>
+                        <li>
+                            <a href="https://www.behance.net/" target="_blank" rel="nofollow" title="Behance">
+                                <svg>
+                                    <use xlink:href="assets/svg/sprite.svg#${element.social.b}"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/" target="_blank" rel="nofollow" title="Linkedin">
+                                <svg>
+                                    <use xlink:href="assets/svg/sprite.svg#${element.social.l}"></use>
+                                </svg>
+                            </a>
+    
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/" target="_blank" rel="nofollow" title="Google">
+                                <svg>
+                                    <use xlink:href="assets/svg/sprite.svg#${element.social.g}"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook">
+                                <svg>
+                                    <use xlink:href="assets/svg/sprite.svg#${element.social.f}"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank" rel="nofollow" title="Twitter">
+                                <svg>
+                                    <use xlink:href="assets/svg/sprite.svg#${element.social.t}"></use>
+                                </svg>
+                            </a>
+                        </li>
+                     </ul>
+                    </div>
+                </div>
+            </div>
 
+        </li>
+        `;
+        });
+        $(".one").html(html);
+    }
+});
 
 
 
