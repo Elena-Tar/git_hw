@@ -595,7 +595,6 @@ header .header_main h3 {
 }
 .team .slider_item {
   height: 500px;
-  border: 1px solid #000;
 }
 .team .slider_item .null {
   width: 100%;

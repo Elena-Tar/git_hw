@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://elena-tar.github.io/git_hw/control_3/sitemap.xml
+Host: elena-tar.github.io

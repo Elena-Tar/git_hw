@@ -117,7 +117,6 @@ $(document).ready(function () {
 
 
 
-
 });
 
 
@@ -258,7 +257,7 @@ function getTeam() {
 }
 
 
-getTeam();
+getTeam()
 
 
 

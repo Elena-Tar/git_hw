@@ -4,11 +4,10 @@
         "name": "Miguel Obrien",
         "position": "CEO & Founder",
         "social": {
-            "f": "facebook",
             "l": "linked-in",
             "g": "google_2",
-            "t": "twitter",
-            "b": "behance_1"
+            "f": "facebook",
+            "t": "twitter"
         }
     },
     {
