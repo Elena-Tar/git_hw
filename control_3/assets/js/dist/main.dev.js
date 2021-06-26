@@ -1,6 +1,7 @@
 "use strict";
 
 $(document).ready(function () {
+  getTeam();
   var slider = $("#lightSlider").lightSlider({
     item: 1,
     slideMove: 1,
@@ -50,30 +51,7 @@ $(document).ready(function () {
     $(this).parents(".modal_wrap").removeClass("open");
   });
   /*2й слайдер*/
-
-  var slider_team = $("#lightSlider_team").lightSlider({
-    item: 3,
-    slideMove: 1,
-    controls: false,
-    slideMargin: 30,
-    responsive: [{
-      breakpoint: 900,
-      settings: {
-        item: 2
-      }
-    }, {
-      breakpoint: 600,
-      settings: {
-        item: 1
-      }
-    }]
-  });
-  $('#slider_prev_team').on('click', function () {
-    slider_team.goToPrevSlide();
-  });
-  $('#slider_next_team').on('click', function () {
-    slider_team.goToNextSlide();
-  }); // form
+  // form
 
   $('#feedback_form').on('submit', function (e) {
     e.preventDefault();
@@ -150,16 +128,59 @@ window.addEventListener("scroll", function () {
 function getTeam() {
   $.ajax({
     // dataType: "json",
-    url: "team.json",
+    url: "assets/data/team.json",
     // data: data,
     success: function success(data) {
       var html = '';
       data.forEach(function (element) {
-        html += "\n            <li>\n            <div class=\"slider_item\">\n                <div class=\"null\">\n                    <div class=\"wrap_pic\">\n                        <img class=\"round\" src=\"assets/img/".concat(element.photo, ".png\" alt=\"#\">\n                    </div>\n                </div>\n                <div class=\"content\">\n                    <h3>").concat(element.name, "</h3>\n                    <h4>").concat(element.position, "</h4>\n                    <div class=\"wrap_socials\">\n                    \n                    <ul>\n                        <li>\n                            <a href=\"https://www.behance.net/\" target=\"_blank\" rel=\"nofollow\" title=\"Behance\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.b, "\"></use>\n                                </svg>\n                            </a>\n                        </li>\n                        <li>\n                            <a href=\"https://www.linkedin.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Linkedin\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.l, "\"></use>\n                                </svg>\n                            </a>\n    \n                        </li>\n                        <li>\n                            <a href=\"https://www.google.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Google\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.g, "\"></use>\n                                </svg>\n                            </a>\n                        </li>\n                        <li>\n                            <a href=\"https://www.facebook.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Facebook\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.f, "\"></use>\n                                </svg>\n                            </a>\n                        </li>\n                        <li>\n                            <a href=\"https://twitter.com/\" target=\"_blank\" rel=\"nofollow\" title=\"Twitter\">\n                                <svg>\n                                    <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social.t, "\"></use>\n                                </svg>\n                            </a>\n                        </li>\n                     </ul>\n                    </div>\n                </div>\n            </div>\n\n        </li>\n        ");
+        html += "\n            <li>\n            <div class=\"slider_item\">\n                <div class=\"null\">\n                    <div class=\"wrap_pic\">\n                        <img class=\"round\" src=\"assets/img/".concat(element.photo, ".png\" alt=\"#\">\n                    </div>\n                </div>\n                <div class=\"content\">\n                    <h3>").concat(element.name, "</h3>\n                    <h4>").concat(element.position, "</h4>\n                    <div class=\"wrap_socials\">\n                    \n                    <ul>\n                    ");
+
+        for (var i in element.social) {
+          // console.log(data);
+          // console.log(element.social);
+          console.log(element.social[i].title);
+          html += "\n                    <li>\n                        <a href=\"".concat(element.social[i].href, "\" target=\"_blank\" rel=\"nofollow\" title=\"").concat(element.social[i].title, "\">\n                            <svg>\n                                <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social[i].icon, "\"></use>\n                            </svg>\n                        </a>\n                    </li>\n                    ");
+        }
+
+        html += "\n                     \n                     </ul >\n                    </div >\n                </div >\n            </div >\n        </li >\n                    ";
       });
       $(".one").html(html);
+      var slider_team = $("#lightSlider_team").lightSlider({
+        item: 3,
+        slideMove: 1,
+        controls: false,
+        slideMargin: 30,
+        responsive: [{
+          breakpoint: 900,
+          settings: {
+            item: 2
+          }
+        }, {
+          breakpoint: 600,
+          settings: {
+            item: 1
+          }
+        }]
+      });
+      $('#slider_prev_team').on('click', function () {
+        slider_team.goToPrevSlide();
+      });
+      $('#slider_next_team').on('click', function () {
+        slider_team.goToNextSlide();
+      });
     }
   });
-}
-
-getTeam();
+} // let arr = [
+//     {
+//         age: 2,
+//         name: "one"
+//     },
+//     {
+//         age: 3,
+//         name: "two"
+//     },
+// ]
+// for (let i = 0; i < arr.length; i++) {
+//     // console.log(i);
+//     console.log(arr[i].age);
+// }

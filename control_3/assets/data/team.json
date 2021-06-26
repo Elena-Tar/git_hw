@@ -1,0 +1,125 @@
+[
+    {
+        "photo": "img_team_1",
+        "name": "Miguel Obrien",
+        "position": "CEO & Founder",
+        "social":[
+            {
+                "title":"LinkedIn",
+                "icon":"linked-in",
+                "href":"https://www.linkedin.com/"
+            },
+            {
+                "title":"Google",
+                "icon":"google_2",
+                "href":"https://www.google.com/"
+            },
+            {
+                "title":"Facebook",
+                "icon":"facebook",
+                "href":"https://www.facebook.com/"
+            },
+            {
+                "title":"Twitter",
+                "icon":"twitter",
+                "href":"https://twitter.com/"
+            }
+        ]
+    },
+    {
+        "photo": "img_team_2",
+        "name": "Jackie Carroll",
+        "position": "Art Director",
+        "social":[
+            {
+                "title":"Behance",
+                "icon":"behance_1",
+                "href":"https://www.behance.net/"
+            },
+            {
+                "title":"LinkedIn",
+                "icon":"linked-in",
+                "href":"https://www.linkedin.com/"
+            },
+            {
+                "title":"Google",
+                "icon":"google_2",
+                "href":"https://www.google.com/"
+            },
+            {
+                "title":"Facebook",
+                "icon":"facebook",
+                "href":"https://www.facebook.com/"
+            },
+            {
+                "title":"Twitter",
+                "icon":"twitter",
+                "href":"https://twitter.com/"
+            }
+        ]
+    },
+    {
+        "photo": "img_team_3",
+        "name": "Ida Morrison",
+        "position": "Designer",
+        "social":[
+            {
+                "title":"Behance",
+                "icon":"behance_1",
+                "href":"https://www.behance.net/"
+            },
+            {
+                "title":"LinkedIn",
+                "icon":"linked-in",
+                "href":"https://www.linkedin.com/"
+            },
+            {
+                "title":"Google",
+                "icon":"google_2",
+                "href":"https://www.google.com/"
+            },
+            {
+                "title":"Facebook",
+                "icon":"facebook",
+                "href":"https://www.facebook.com/"
+            },
+            {
+                "title":"Twitter",
+                "icon":"twitter",
+                "href":"https://twitter.com/"
+            }
+        ]
+    },
+    {
+        "photo": "img_team_3",
+        "name": "Ida Morrison",
+        "position": "Designer",
+        "social":[
+            {
+                "title":"Behance",
+                "icon":"behance_1",
+                "href":"https://www.behance.net/"
+            },
+            {
+                "title":"LinkedIn",
+                "icon":"linked-in",
+                "href":"https://www.linkedin.com/"
+            },
+            {
+                "title":"Google",
+                "icon":"google_2",
+                "href":"https://www.google.com/"
+            },
+            {
+                "title":"Facebook",
+                "icon":"facebook",
+                "href":"https://www.facebook.com/"
+            },
+            {
+                "title":"Twitter",
+                "icon":"twitter",
+                "href":"https://twitter.com/"
+            }
+        ]
+    }
+]

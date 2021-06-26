@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    getTeam();
+
     const slider = $("#lightSlider").lightSlider({
         item: 1,
         slideMove: 1,
@@ -52,33 +55,7 @@ $(document).ready(function () {
 
 
     /*2й слайдер*/
-    const slider_team = $("#lightSlider_team").lightSlider({
-        item: 3,
-        slideMove: 1,
-        controls: false,
-        slideMargin: 30,
-        responsive: [
-            {
-                breakpoint: 900,
-                settings: {
-                    item: 2
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    item: 1
-                }
-            }
-        ]
 
-    });
-    $('#slider_prev_team').on('click', function () {
-        slider_team.goToPrevSlide()
-    });
-    $('#slider_next_team').on('click', function () {
-        slider_team.goToNextSlide()
-    });
 
 
     // form
@@ -186,7 +163,7 @@ function getTeam() {
 
     $.ajax({
         // dataType: "json",
-        url: "team.json",
+        url: "assets/data/team.json",
         // data: data,
         success: function (data) {
             let html = '';
@@ -205,51 +182,62 @@ function getTeam() {
                     <div class="wrap_socials">
                     
                     <ul>
-                        <li>
-                            <a href="https://www.behance.net/" target="_blank" rel="nofollow" title="Behance">
-                                <svg>
-                                    <use xlink:href="assets/svg/sprite.svg#${element.social.b}"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" target="_blank" rel="nofollow" title="Linkedin">
-                                <svg>
-                                    <use xlink:href="assets/svg/sprite.svg#${element.social.l}"></use>
-                                </svg>
-                            </a>
-    
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/" target="_blank" rel="nofollow" title="Google">
-                                <svg>
-                                    <use xlink:href="assets/svg/sprite.svg#${element.social.g}"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook">
-                                <svg>
-                                    <use xlink:href="assets/svg/sprite.svg#${element.social.f}"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/" target="_blank" rel="nofollow" title="Twitter">
-                                <svg>
-                                    <use xlink:href="assets/svg/sprite.svg#${element.social.t}"></use>
-                                </svg>
-                            </a>
-                        </li>
-                     </ul>
-                    </div>
-                </div>
-            </div>
+                    `;
 
-        </li>
-        `;
+                for (let i in element.social) {
+                    // console.log(data);
+                    // console.log(element.social);
+                    console.log(element.social[i].title);
+                    html += `
+                    <li>
+                        <a href="${element.social[i].href}" target="_blank" rel="nofollow" title="${element.social[i].title}">
+                            <svg>
+                                <use xlink:href="assets/svg/sprite.svg#${element.social[i].icon}"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    `;
+                }
+
+                html += `
+                     
+                     </ul >
+                    </div >
+                </div >
+            </div >
+        </li >
+                    `;
             });
             $(".one").html(html);
+            const slider_team = $("#lightSlider_team").lightSlider({
+                item: 3,
+                slideMove: 1,
+                controls: false,
+                slideMargin: 30,
+                responsive: [
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            item: 2
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            item: 1
+                        }
+                    }
+                ]
+
+            });
+            $('#slider_prev_team').on('click', function () {
+                slider_team.goToPrevSlide()
+            });
+            $('#slider_next_team').on('click', function () {
+                slider_team.goToNextSlide()
+            });
+
+
         }
     });
 
@@ -257,11 +245,24 @@ function getTeam() {
 }
 
 
-getTeam()
 
 
 
+// let arr = [
+//     {
+//         age: 2,
+//         name: "one"
+//     },
+//     {
+//         age: 3,
+//         name: "two"
+//     },
+// ]
 
+// for (let i = 0; i < arr.length; i++) {
+//     // console.log(i);
+//     console.log(arr[i].age);
+// }
 
 
 
