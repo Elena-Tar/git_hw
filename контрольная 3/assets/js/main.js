@@ -117,6 +117,7 @@ $(document).ready(function () {
 
 
 
+
 });
 
 
@@ -182,18 +183,16 @@ window.addEventListener("scroll", function () {
 
 
 
+function getTeam() {
 
-
-
-
-$.ajax({
-    // dataType: "json",
-    url: "team.json",
-    // data: data,
-    success: function (data) {
-        let html = '';
-        data.forEach(element => {
-            html += `
+    $.ajax({
+        // dataType: "json",
+        url: "team.json",
+        // data: data,
+        success: function (data) {
+            let html = '';
+            data.forEach(element => {
+                html += `
             <li>
             <div class="slider_item">
                 <div class="null">
@@ -250,11 +249,16 @@ $.ajax({
 
         </li>
         `;
-        });
-        $(".one").html(html);
-    }
-});
+            });
+            $(".one").html(html);
+        }
+    });
 
+
+}
+
+
+getTeam();
 
 
 

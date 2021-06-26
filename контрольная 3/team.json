@@ -46,17 +46,5 @@
             "f": "facebook",
             "t": "twitter"
         }
-    },
-    {
-        "photo": "img_team_3",
-        "name": "Ida Morrison",
-        "position": "Designer",
-        "social": {
-            "b": "behance_1",
-            "l": "linked-in",
-            "g": "google_2",
-            "f": "facebook",
-            "t": "twitter"
-        }
     }
 ]
