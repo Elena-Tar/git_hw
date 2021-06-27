@@ -160,6 +160,7 @@ span.page-link:hover {
 .theme {
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .snow {
