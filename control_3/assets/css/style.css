@@ -143,6 +143,7 @@ body {
   color: #7d7a7c;
 }
 .btn:hover {
+  -webkit-box-shadow: 0 0 2px 5px #fff;
   box-shadow: 0 0 2px 5px #fff;
   font-weight: 700;
   border: 1px solid #fff;
@@ -181,6 +182,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   z-index: 10000;
 }
@@ -193,7 +195,10 @@ body {
   width: 100%;
   max-width: 400px;
   background-color: #ebebeb;
+  -webkit-box-shadow: 0 0 5px #000;
   box-shadow: 0 0 5px #000;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   z-index: 10001;
 }
@@ -229,7 +234,11 @@ body {
 }
 
 .mmb_top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 10px;
   background-color: #b5b2d5;
@@ -257,18 +266,26 @@ header .header_top {
   height: 120px;
   position: fixed;
   width: 100%;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   z-index: 999;
   padding-top: 34px;
 }
 header .header_top .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 26px;
 }
 header .header_top.fixed {
   height: 60px;
+  -webkit-box-shadow: 0 0 3px #999;
   box-shadow: 0 0 3px #999;
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   padding-top: 10px;
   background-color: #b5b2d5;
@@ -291,6 +308,8 @@ header .logo svg {
   fill: #fff;
 }
 header .main_menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 16px;
 }
@@ -332,8 +351,13 @@ header .header_main h3 {
   background-color: #ebebeb;
 }
 .about .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding-top: 124px;
   padding-bottom: 120px;
@@ -366,6 +390,7 @@ header .header_main h3 {
 .about .pic .wrap_content .icon img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .about .pic .wrap_content h3 {
@@ -455,6 +480,7 @@ header .header_main h3 {
 .services .grid .col_services .pic_wrap img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .services .grid .col_services .text {
@@ -523,28 +549,37 @@ header .header_main h3 {
 .works .wrap_slider .slider_item img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .works .wrap_slider #slider_prev {
   position: absolute;
   top: 48%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   left: -36%;
   width: 26px;
   height: 26px;
   border-bottom: 2px solid #fff;
   border-left: 2px solid #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .works .wrap_slider #slider_next {
   position: absolute;
   top: 48%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   right: -36%;
   width: 26px;
   height: 26px;
   border-bottom: 2px solid #fff;
   border-left: 2px solid #fff;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
 .works .wrap_slider .lSSlideOuter .lSPager.lSpg > li.active a,
@@ -569,6 +604,7 @@ header .header_main h3 {
   color: #fff;
 }
 .works .btn:hover {
+  -webkit-box-shadow: 0 0 2px 5px #fff;
   box-shadow: 0 0 2px 5px #fff;
   font-weight: 700;
   border: none;
@@ -607,12 +643,15 @@ header .header_main h3 {
   position: absolute;
   left: 50%;
   top: 92%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1;
 }
 .team .slider_item .null .wrap_pic img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
   border: 14px solid #ebebeb;
@@ -642,7 +681,11 @@ header .header_main h3 {
   position: absolute;
   left: 0;
   bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #9f9acf;
   width: 100%;
@@ -658,9 +701,13 @@ header .header_main h3 {
   height: 100%;
   fill: #ebebeb;
   border-radius: 50%;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
 }
 .team .slider_item .content .wrap_socials ul li :hover svg {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
   transform: scale(1.2);
   border: 1px solid #fff;
 }
@@ -672,6 +719,8 @@ header .header_main h3 {
   height: 26px;
   border-bottom: 2px solid #676061;
   border-left: 2px solid #676061;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   margin: 0 auto;
 }
@@ -683,6 +732,8 @@ header .header_main h3 {
   height: 26px;
   border-bottom: 2px solid #676061;
   border-left: 2px solid #676061;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
   transform: rotate(-135deg);
   margin: 0 auto;
 }
@@ -710,8 +761,13 @@ header .header_main h3 {
 }
 .contact .wrap_form {
   padding-top: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   /**/
 }
@@ -742,10 +798,12 @@ header .header_main h3 {
   z-index: 1;
 }
 .contact .wrap_form input:focus {
+  -webkit-box-shadow: 0 4px 8px #fff;
   box-shadow: 0 4px 8px #fff;
   border: 1px solid #fff;
 }
 .contact .wrap_form input:hover {
+  -webkit-box-shadow: 0 4px 8px #fff;
   box-shadow: 0 4px 8px #fff;
   border: 1px solid #fff;
 }
@@ -753,6 +811,8 @@ header .header_main h3 {
   position: absolute;
   top: 28px;
   left: 4px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: #fff;
   font-style: italic;
@@ -786,10 +846,12 @@ header .header_main h3 {
   z-index: 1;
 }
 .contact .wrap_form textarea:focus {
+  -webkit-box-shadow: 0 4px 8px #fff;
   box-shadow: 0 4px 8px #fff;
   border: 1px solid #fff;
 }
 .contact .wrap_form textarea:hover {
+  -webkit-box-shadow: 0 4px 8px #fff;
   box-shadow: 0 4px 8px #fff;
   border: 1px solid #fff;
 }
@@ -812,46 +874,75 @@ header .header_main h3 {
   cursor: pointer;
 }
 .contact .wrap_btn .button_send_msg:hover {
+  -webkit-box-shadow: 0 4px 8px #fff;
   box-shadow: 0 4px 8px #fff;
   border: 1px solid #fff;
 }
 .contact .address {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   right: 0;
   top: 220px;
+  -webkit-transition: margin-right 2s ease-in-out;
+  -o-transition: margin-right 2s ease-in-out;
   transition: margin-right 2s ease-in-out;
+  -webkit-transform: translateX(74%);
+  -ms-transform: translateX(74%);
   transform: translateX(74%);
 }
 .contact .address:hover {
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
   transform: translateX(0%);
 }
 .contact .address .icon {
   width: 90px;
   height: 90px;
   background-color: #9f9acf;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
 }
 .contact .phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   right: 0;
   top: 310px;
+  -webkit-transition: margin-right 2s ease-in-out;
+  -o-transition: margin-right 2s ease-in-out;
   transition: margin-right 2s ease-in-out;
+  -webkit-transform: translateX(74%);
+  -ms-transform: translateX(74%);
   transform: translateX(74%);
 }
 .contact .phone:hover {
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
   transform: translateX(0%);
 }
 .contact .phone .icon {
   width: 90px;
   height: 90px;
   background-color: #9f9acf;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
 }
@@ -888,8 +979,14 @@ header .header_main h3 {
   width: 100%;
   height: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding-top: 22px;
 }
@@ -900,9 +997,12 @@ header .header_main h3 {
   width: 22px;
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
 .contact .to_top:hover {
+  -webkit-box-shadow: 0 3px 6px #fff;
   box-shadow: 0 3px 6px #fff;
 }
 
@@ -912,8 +1012,13 @@ footer {
 footer .wrap {
   padding-top: 56px;
   padding-bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 footer .wrap .text {
@@ -929,7 +1034,11 @@ footer .wrap .wrap_socials {
   width: 50%;
 }
 footer .wrap .wrap_socials ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
   width: 100%;
   padding-right: 30px;
@@ -950,9 +1059,13 @@ footer .wrap .wrap_socials ul li svg {
   height: 100%;
   fill: #ebebeb;
   border-radius: 50%;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
 }
 footer .wrap .wrap_socials ul li :hover svg {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
   transform: scale(1.2);
   border: 1px solid #fff;
 }
@@ -1001,6 +1114,8 @@ footer .wrap .wrap_socials ul li :hover svg {
 }
 @media screen and (max-width: 800px) {
   .about .wrap {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding-top: 64px;
     padding-bottom: 60px;
@@ -1119,6 +1234,8 @@ footer .wrap .wrap_socials ul li :hover svg {
 
   .contact .to_top {
     right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
     transform: translateX(50%);
     bottom: 10px;
   }
@@ -1140,6 +1257,8 @@ footer .wrap .wrap_socials ul li :hover svg {
   }
 
   footer .wrap .wrap_socials ul {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding-right: 0;
   }

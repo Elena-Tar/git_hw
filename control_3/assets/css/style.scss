@@ -50,6 +50,7 @@ $clr-light-blue:#ebebeb;
 
     &:hover {
         // box-shadow: 0 0 2px 5px #6e92e6;
+        -webkit-box-shadow: 0 0 2px 5px #fff;
         box-shadow: 0 0 2px 5px #fff;
         font-weight: 700;
         border: 1px solid #fff;
@@ -90,6 +91,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .8);
+    -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px); //текст под menu_shadow помутнел
     z-index: 10000;
 }
@@ -102,7 +104,10 @@ body {
     width: 100%;
     max-width: 400px; //на мобильном откроется полностью, а на планшете max откроется на 400px
     background-color: #ebebeb;
+    -webkit-box-shadow: 0 0 5px #000;
     box-shadow: 0 0 5px #000;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
     transition: all .2s ease;
     z-index: 10001;
 
@@ -143,7 +148,11 @@ body {
 }
 
 .mmb_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 10px;
     background-color: #b5b2d5;
@@ -176,12 +185,18 @@ header {
         height: 120px;
         position: fixed;
         width: 100%;
+        -webkit-transition: all .2s ease;
+        -o-transition: all .2s ease;
         transition: all .2s ease;
         z-index: 999;
         padding-top: 34px;
 
         .wrap {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
             padding: 0 26px;
         }
@@ -189,8 +204,10 @@ header {
         &.fixed {
             //класс который нужно добавить хедеру
             height: 60px;
+            -webkit-box-shadow: 0 0 3px #999;
             box-shadow: 0 0 3px #999;
             // background-color: rgba(255, 255, 255, 0.7);
+            -webkit-backdrop-filter: blur(3px);
             backdrop-filter: blur(3px);
             padding-top: 10px;
             background-color: #b5b2d5;
@@ -220,6 +237,8 @@ header {
     }
 
     .main_menu ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin-top: 16px;
 
@@ -269,8 +288,13 @@ header {
     background-color: $clr-light-blue;
 
     .wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         padding-top: 124px;
         padding-bottom: 120px;
@@ -306,6 +330,7 @@ header {
                 img {
                     width: 100%;
                     height: 100%;
+                    -o-object-fit: cover;
                     object-fit: cover;
                 }
             }
@@ -420,6 +445,7 @@ header {
                 img {
                     width: 100%;
                     height: 100%;
+                    -o-object-fit: cover;
                     object-fit: cover;
                 }
             }
@@ -506,6 +532,7 @@ header {
             img {
                 width: 100%;
                 height: 100%;
+                -o-object-fit: cover;
                 object-fit: cover;
             }
         }
@@ -513,24 +540,32 @@ header {
         #slider_prev {
             position: absolute;
             top: 48%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
             left: -36%;
             width: 26px;
             height: 26px;
             border-bottom: 2px solid $clr-white;
             border-left: 2px solid $clr-white;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
             transform: rotate(45deg);
         }
 
         #slider_next {
             position: absolute;
             top: 48%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
             right: -36%;
             width: 26px;
             height: 26px;
             border-bottom: 2px solid $clr-white;
             border-left: 2px solid $clr-white;
+            -webkit-transform: rotate(-135deg);
+            -ms-transform: rotate(-135deg);
             transform: rotate(-135deg);
         }
 
@@ -562,6 +597,7 @@ header {
         color: $clr-white;
 
         &:hover {
+            -webkit-box-shadow: 0 0 2px 5px $clr-white;
             box-shadow: 0 0 2px 5px $clr-white;
             font-weight: 700;
             border: none;
@@ -606,12 +642,15 @@ header {
                 position: absolute;
                 left: 50%;
                 top: 92%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
                 z-index: 1;
 
                 img {
                     width: 100%;
                     height: 100%;
+                    -o-object-fit: cover;
                     object-fit: cover;
                     border-radius: 50%;
                     border: 14px solid #ebebeb;
@@ -646,7 +685,11 @@ header {
                 position: absolute;
                 left: 0;
                 bottom: 0;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
                 justify-content: center;
                 background-color: #9f9acf;
                 width: 100%;
@@ -663,11 +706,15 @@ header {
                         height: 100%;
                         fill: #ebebeb;
                         border-radius: 50%;
+                        -webkit-transform: scale(1);
+                        -ms-transform: scale(1);
                         transform: scale(1);
                     }
 
                     :hover {
                         svg {
+                            -webkit-transform: scale(1.2);
+                            -ms-transform: scale(1.2);
                             transform: scale(1.2);
                             border: 1px solid #fff;
                         }
@@ -687,6 +734,8 @@ header {
         height: 26px;
         border-bottom: 2px solid #676061;
         border-left: 2px solid #676061;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
         margin: 0 auto;
     }
@@ -699,6 +748,8 @@ header {
         height: 26px;
         border-bottom: 2px solid #676061;
         border-left: 2px solid #676061;
+        -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
         transform: rotate(-135deg);
         margin: 0 auto;
     }
@@ -734,8 +785,13 @@ header {
 
     .wrap_form {
         padding-top: 240px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 
 
@@ -772,11 +828,13 @@ header {
             z-index: 1;
 
             &:focus {
+                -webkit-box-shadow: 0 4px 8px #fff;
                 box-shadow: 0 4px 8px #fff;
                 border: 1px solid #fff;
             }
 
             &:hover {
+                -webkit-box-shadow: 0 4px 8px #fff;
                 box-shadow: 0 4px 8px #fff;
                 border: 1px solid #fff;
             }
@@ -786,6 +844,8 @@ header {
             position: absolute;
             top: 28px;
             left: 4px;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
             color: $clr-white;
             font-style: italic;
@@ -825,11 +885,13 @@ header {
             z-index: 1;
 
             &:focus {
+                -webkit-box-shadow: 0 4px 8px #fff;
                 box-shadow: 0 4px 8px #fff;
                 border: 1px solid #fff;
             }
 
             &:hover {
+                -webkit-box-shadow: 0 4px 8px $clr-white;
                 box-shadow: 0 4px 8px $clr-white;
                 border: 1px solid $clr-white;
             }
@@ -856,6 +918,7 @@ header {
             cursor: pointer;
 
             &:hover {
+                -webkit-box-shadow: 0 4px 8px $clr-white;
                 box-shadow: 0 4px 8px $clr-white;
                 border: 1px solid $clr-white;
             }
@@ -863,15 +926,23 @@ header {
     }
 
     .address {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         position: absolute;
         right: 0;
         top: 220px;
+        -webkit-transition: margin-right 2s ease-in-out;
+        -o-transition: margin-right 2s ease-in-out;
         transition: margin-right 2s ease-in-out;
         // Сдвигает элемент по горизонтали на указанное значение. Положительное значение сдвигает вправо, отрицательное влево.
+        -webkit-transform: translateX(74%);
+        -ms-transform: translateX(74%);
         transform: translateX(74%);
 
         &:hover {
+            -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
             transform: translateX(0%);
         }
 
@@ -879,8 +950,14 @@ header {
             width: 90px;
             height: 90px;
             background-color: #9f9acf;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             cursor: pointer;
 
@@ -889,16 +966,26 @@ header {
     }
 
     .phone {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         position: absolute;
         right: 0;
         top: 310px;
 
+        -webkit-transition: margin-right 2s ease-in-out;
+
+        -o-transition: margin-right 2s ease-in-out;
+
         transition: margin-right 2s ease-in-out;
         // Сдвигает элемент по горизонтали на указанное значение. Положительное значение сдвигает вправо, отрицательное влево.
+        -webkit-transform: translateX(74%);
+        -ms-transform: translateX(74%);
         transform: translateX(74%);
 
         &:hover {
+            -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
             transform: translateX(0%);
         }
 
@@ -906,8 +993,14 @@ header {
             width: 90px;
             height: 90px;
             background-color: #9f9acf;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             cursor: pointer;
 
@@ -948,8 +1041,14 @@ header {
             width: 100%;
             height: 100%;
             position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             padding-top: 22px;
 
@@ -960,11 +1059,14 @@ header {
                 width: 22px;
                 border-right: 1px solid $clr-white;
                 border-bottom: 1px solid $clr-white;
+                -webkit-transform: rotate(-135deg);
+                -ms-transform: rotate(-135deg);
                 transform: rotate(-135deg);
             }
         }
 
         &:hover {
+            -webkit-box-shadow: 0 3px 6px $clr-white;
             box-shadow: 0 3px 6px $clr-white;
         }
     }
@@ -976,8 +1078,13 @@ footer {
     .wrap {
         padding-top: 56px;
         padding-bottom: 60px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 
         .text {
@@ -995,7 +1102,11 @@ footer {
             width: 50%;
 
             ul {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-pack: end;
+                -ms-flex-pack: end;
                 justify-content: flex-end;
                 width: 100%;
                 padding-right: 30px;
@@ -1017,11 +1128,15 @@ footer {
                         height: 100%;
                         fill: #ebebeb;
                         border-radius: 50%;
+                        -webkit-transform: scale(1);
+                        -ms-transform: scale(1);
                         transform: scale(1);
                     }
 
                     :hover {
                         svg {
+                            -webkit-transform: scale(1.2);
+                            -ms-transform: scale(1.2);
                             transform: scale(1.2);
                             border: 1px solid #fff;
                         }
@@ -1095,6 +1210,8 @@ footer {
 
 @media screen and (max-width:800px) {
     .about .wrap {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         padding-top: 64px;
         padding-bottom: 60px;
@@ -1231,6 +1348,8 @@ footer {
 
     .contact .to_top {
         right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
         transform: translateX(50%);
         bottom: 10px;
     }
@@ -1253,6 +1372,8 @@ footer {
     }
 
     footer .wrap .wrap_socials ul {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         padding-right: 0;
     }
