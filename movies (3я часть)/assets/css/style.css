@@ -3,6 +3,14 @@ body {
   background-color: #cde0e6;
 }
 
+.btn {
+  cursor: pointer;
+  transform: scale(1);
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+
 .img_wrap {
   position: relative;
   overflow: hidden;
@@ -108,6 +116,11 @@ span.page-link:hover {
   width: 200px;
 }
 
+.container.mt-4 {
+  margin-top: 0 !important;
+  padding-top: 40px;
+}
+
 .theme.dark_theme {
   background-color: #2e2626;
   color: #fff;
@@ -119,7 +132,7 @@ span.page-link:hover {
   background-color: #232323;
 }
 .theme.dark_theme .card-body {
-  background-color: #ebe7e7;
+  background-color: #8d8d8d;
   box-shadow: 0 4px 10px #fff;
 }
 .theme.dark_theme .card.col-3 {
@@ -144,6 +157,11 @@ span.page-link:hover {
 }
 
 /*анимация*/
+.theme {
+  position: relative;
+  overflow: hidden;
+}
+
 .snow {
   width: 40px;
   height: 40px;
@@ -159,52 +177,52 @@ span.page-link:hover {
 
 .snow_1 {
   left: 90%;
-  animation: anim 10s linear infinite;
+  animation: anim 14s linear infinite;
 }
 
 .snow_2 {
   left: 98%;
-  animation: anim 15s linear infinite;
+  animation: anim 19s linear infinite;
 }
 
 .snow_3 {
   left: 84%;
-  animation: anim 12s linear infinite;
+  animation: anim 16s linear infinite;
 }
 
 .snow_4 {
   left: 95%;
-  animation: anim 20s linear infinite;
+  animation: anim 24s linear infinite;
 }
 
 .snow_5 {
   left: 90%;
-  animation: anim 6s linear infinite;
+  animation: anim 10s linear infinite;
 }
 
 .snow_6 {
   left: 10%;
-  animation: anim 15s linear infinite;
+  animation: anim 19s linear infinite;
 }
 
 .snow_7 {
   left: 5%;
-  animation: anim 12s linear infinite;
+  animation: anim 16s linear infinite;
 }
 
 .snow_8 {
   left: 2%;
-  animation: anim 10s linear infinite;
+  animation: anim 14s linear infinite;
 }
 
 .snow_9 {
   left: 15%;
-  animation: anim 20s linear infinite;
+  animation: anim 24s linear infinite;
 }
 
 .snow_10 {
   left: 7%;
-  animation: anim 20s linear infinite;
+  animation: anim 24s linear infinite;
 }
 
 @keyframes anim {

@@ -2,6 +2,15 @@ body {
     background-color: rgb(205, 224, 230);
 }
 
+.btn {
+    cursor: pointer;
+    transform: scale(1);
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 .img_wrap {
     position: relative;
     overflow: hidden;
@@ -123,6 +132,14 @@ span.page-link:hover {
     }
 }
 
+.container.mt-4 {
+    margin-top: 0 !important;
+    padding-top: 40px;
+}
+
+// .teheme {
+//     background-color: rgb(205, 224, 230);
+// }
 
 .theme.dark_theme {
 
@@ -133,15 +150,12 @@ span.page-link:hover {
         color: #fff;
     }
 
-
-
-
     .form-control {
         background-color: #232323;
     }
 
     .card-body {
-        background-color: rgb(235, 231, 231);
+        background-color: rgb(141, 141, 141);
         // border: 1px solid #fff;
         box-shadow: 0 4px 10px #fff;
 
@@ -171,7 +185,14 @@ span.page-link:hover {
     margin-bottom: 10px;
 }
 
+
+
 /*анимация*/
+.theme {
+    position: relative;
+    overflow: hidden;
+}
+
 .snow {
     width: 40px;
     height: 40px;
@@ -188,52 +209,52 @@ span.page-link:hover {
 
 .snow_1 {
     left: 90%;
-    animation: anim 10s linear infinite;
+    animation: anim 14s linear infinite;
 }
 
 .snow_2 {
     left: 98%;
-    animation: anim 15s linear infinite;
+    animation: anim 19s linear infinite;
 }
 
 .snow_3 {
     left: 84%;
-    animation: anim 12s linear infinite;
+    animation: anim 16s linear infinite;
 }
 
 .snow_4 {
     left: 95%;
-    animation: anim 20s linear infinite;
+    animation: anim 24s linear infinite;
 }
 
 .snow_5 {
     left: 90%;
-    animation: anim 6s linear infinite;
+    animation: anim 10s linear infinite;
 }
 
 .snow_6 {
     left: 10%;
-    animation: anim 15s linear infinite;
+    animation: anim 19s linear infinite;
 }
 
 .snow_7 {
     left: 5%;
-    animation: anim 12s linear infinite;
+    animation: anim 16s linear infinite;
 }
 
 .snow_8 {
     left: 2%;
-    animation: anim 10s linear infinite;
+    animation: anim 14s linear infinite;
 }
 
 .snow_9 {
     left: 15%;
-    animation: anim 20s linear infinite;
+    animation: anim 24s linear infinite;
 }
 
 .snow_10 {
     left: 7%;
-    animation: anim 20s linear infinite;
+    animation: anim 24s linear infinite;
 }
 
 @keyframes anim {
