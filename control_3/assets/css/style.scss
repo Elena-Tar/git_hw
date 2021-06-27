@@ -681,9 +681,8 @@ header {
 
     #slider_prev_team {
         position: absolute;
-        top: 50%;
-        left: -66px;
-
+        top: 58.5%;
+        left: -74px;
         width: 26px;
         height: 26px;
         border-bottom: 2px solid #676061;
@@ -694,8 +693,8 @@ header {
 
     #slider_next_team {
         position: absolute;
-        top: 50%;
-        right: -66px;
+        top: 58.5%;
+        right: -74px;
         width: 26px;
         height: 26px;
         border-bottom: 2px solid #676061;
@@ -1069,8 +1068,8 @@ footer {
 
 @media screen and (max-width:600px) {
     header .header_main {
-        padding-top: 300px;
-        padding-bottom: 310px;
+        padding-top: 330px;
+        padding-bottom: 340px;
     }
 
     header .header_main h2 {
@@ -1103,7 +1102,10 @@ footer {
 
     .about .pic .wrap_img {
         width: 100%;
-        margin-bottom: 14px;
+    }
+
+    .about .pic {
+        margin-bottom: 24px;
     }
 
     .about .pic .wrap_content {

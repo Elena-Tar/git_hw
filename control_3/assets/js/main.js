@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    getTeam();
+
 
     const slider = $("#lightSlider").lightSlider({
         item: 1,
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     $('#feedback_form').on('submit', function (e) {
         e.preventDefault();
-        console.log($('#feedback_form').serialize())  //отправляется и по enter и по клику на кнопку
+        // console.log($('#feedback_form').serialize())  //отправляется и по enter и по клику на кнопку
         sendMessage($(this)); //вызов функции sendMessage и передать в нее форму
     });
 
@@ -77,21 +77,7 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    getTeam();
 
 
 });
@@ -128,21 +114,44 @@ function sendMessage($form) {     // принимает в себя объект
         }
     });
     if (valid) {
-        axios
-            .get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text)
-            .then((resp) => {
-                // console.log(resp);
-                // console.log(resp.status);
-                if (resp.status === 200) {
+        // axios
+        //     .get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text)
+        //     .then((resp) => {
+        //         // console.log(resp);
+        //         // console.log(resp.status);
+        //         if (resp.status === 200) {
+        //             alert('ok');
+        //         } else {
+        //             alert('ne ok');
+        //         }
+
+        //     })
+
+        $.ajax({
+            url: ('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text),
+            type: 'get',
+            success: function (resp) {
+                // console.log(resp.ok);
+                if (resp.ok == true) {
                     alert('ok');
+                    $('#feedback_form').trigger('reset');
                 } else {
                     alert('ne ok');
                 }
+            }
+        })
 
-            })
+
+
+
 
     }
 }
+
+
+
+
+
 
 /** parallax */
 const parallax = document.getElementById("parallax");
@@ -172,9 +181,10 @@ function getTeam() {
             <li>
             <div class="slider_item">
                 <div class="null">
-                    <div class="wrap_pic">
-                        <img class="round" src="assets/img/${element.photo}.png" alt="#">
-                    </div>
+                <div class="wrap_pic">
+                <img src="assets/img/${element.photo}.png" alt="#">
+                
+            </div>
                 </div>
                 <div class="content">
                     <h3>${element.name}</h3>
@@ -187,7 +197,7 @@ function getTeam() {
                 for (let i in element.social) {
                     // console.log(data);
                     // console.log(element.social);
-                    console.log(element.social[i].title);
+                    // console.log(element.social[i].title);
                     html += `
                     <li>
                         <a href="${element.social[i].href}" target="_blank" rel="nofollow" title="${element.social[i].title}">
@@ -243,19 +253,6 @@ function getTeam() {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -8,7 +8,105 @@
     <title>Digital products</title>
 
     <style>
-        header{min-height:100vh}header .bg{width:100%;height:100%;background-repeat:no-repeat;background-size:cover}header .header_top{height:120px;position:fixed;width:100%;transition:all .2s ease;z-index:999;padding-top:34px}header .header_top .wrap{display:flex;justify-content:space-between;padding:0 26px}header .header_top.fixed{height:60px;box-shadow:0 0 3px #999;backdrop-filter:blur(3px);padding-top:10px;background-color:#b5b2d5}header .header_top.fixed .logo{height:40px;width:40px}header .header_top.fixed .main_menu ul{margin-top:4px}header .logo{height:74px;width:58px;padding-left:5px}header .logo svg{width:100%;height:100%;fill:#fff}header .main_menu ul{display:flex;margin-top:16px}header .main_menu ul li{margin-right:30px}header .main_menu ul li:last-child{margin-right:0}header .main_menu ul li a{font-family:ProximaNova-Semibold;text-decoration:none;text-transform:uppercase;font-size:24px;color:#fff}header .main_menu ul li:hover{border-top:2px solid #fff}header .header_main{padding-top:388px;padding-bottom:512px;color:#fefefb;text-align:center}header .header_main h2{font-family:ProximaNova-Bold;font-size:72.22px;text-transform:uppercase}header .header_main h3{font-style:italic;font-size:30.09px;padding-top:12px;line-height:36px}
+        header {
+            min-height: 100vh
+        }
+
+        header .bg {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover
+        }
+
+        header .header_top {
+            height: 120px;
+            position: fixed;
+            width: 100%;
+            transition: all .2s ease;
+            z-index: 999;
+            padding-top: 34px
+        }
+
+        header .header_top .wrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 26px
+        }
+
+        header .header_top.fixed {
+            height: 60px;
+            box-shadow: 0 0 3px #999;
+            backdrop-filter: blur(3px);
+            padding-top: 10px;
+            background-color: #b5b2d5
+        }
+
+        header .header_top.fixed .logo {
+            height: 40px;
+            width: 40px
+        }
+
+        header .header_top.fixed .main_menu ul {
+            margin-top: 4px
+        }
+
+        header .logo {
+            height: 74px;
+            width: 58px;
+            padding-left: 5px
+        }
+
+        header .logo svg {
+            width: 100%;
+            height: 100%;
+            fill: #fff
+        }
+
+        header .main_menu ul {
+            display: flex;
+            margin-top: 16px
+        }
+
+        header .main_menu ul li {
+            margin-right: 30px
+        }
+
+        header .main_menu ul li:last-child {
+            margin-right: 0
+        }
+
+        header .main_menu ul li a {
+            font-family: ProximaNova-Semibold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 24px;
+            color: #fff
+        }
+
+        header .main_menu ul li:hover {
+            border-top: 2px solid #fff
+        }
+
+        header .header_main {
+            padding-top: 388px;
+            padding-bottom: 512px;
+            color: #fefefb;
+            text-align: center
+        }
+
+        header .header_main h2 {
+            font-family: ProximaNova-Bold;
+            font-size: 72.22px;
+            text-transform: uppercase
+        }
+
+        header .header_main h3 {
+            font-style: italic;
+            font-size: 30.09px;
+            padding-top: 12px;
+            line-height: 36px
+        }
     </style>
 
 
@@ -126,7 +224,9 @@
             <div class="container wrap">
                 <div class="pic">
                     <div class="wrap_img">
-                        <img src="assets/img/img_about.png" alt="#">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                            class="lazy" data-src="assets/img/img_about.png" alt="#">
+                        <!-- <img src="assets/img/img_about.png" alt="#"> -->
                     </div>
                     <div class="wrap_content">
                         <div class="icon">
@@ -255,7 +355,7 @@
                 </div>
                 <div class="wrap_slider">
                     <ul id="lightSlider_team" class="one">
-                    <!-- main.js  -->
+                        <!-- main.js  -->
                     </ul>
                     <a href="javascript:void(0)" id="slider_prev_team"></a>
                     <a href="javascript:void(0)" id="slider_next_team"></a>
@@ -302,7 +402,7 @@
                                 <input type="text" id="name" name="name" class="form-control" placeholder="&nbsp;"
                                     data-required>
                                 <label for="name" class="placeholder">Your Name <span class="star">*</span></label>
-                                
+
                                 <div id="name_err" class="form-text"></div>
                             </div>
                             <div class="wrap_input form_row">
@@ -314,7 +414,8 @@
                             <div class="form_textarea form_row">
                                 <textarea name="message" id="message" class="form-control" placeholder="&nbsp;"
                                     data-required></textarea>
-                                <label for="message" class="placeholder">Your Message <span class="star">*</span></label>
+                                <label for="message" class="placeholder">Your Message <span
+                                        class="star">*</span></label>
                                 <div id="message_err" class="form-text"></div>
                             </div>
                         </div>
@@ -330,6 +431,8 @@
             </a>
         </section>
     </main>
+
+
     <footer>
         <div class="container wrap">
             <div class="text">©2014 tulusdriyo. All Rights Reserved.</div>
@@ -383,7 +486,7 @@
     <script src="assets/js/jquery-3.6.0.min.js"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 
     <script src="assets/js/plagins/lightslider/js/lightslider.min.js"></script>
 

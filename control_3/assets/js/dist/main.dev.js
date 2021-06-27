@@ -1,7 +1,6 @@
 "use strict";
 
 $(document).ready(function () {
-  getTeam();
   var slider = $("#lightSlider").lightSlider({
     item: 1,
     slideMove: 1,
@@ -54,8 +53,7 @@ $(document).ready(function () {
   // form
 
   $('#feedback_form').on('submit', function (e) {
-    e.preventDefault();
-    console.log($('#feedback_form').serialize()); //отправляется и по enter и по клику на кнопку
+    e.preventDefault(); // console.log($('#feedback_form').serialize())  //отправляется и по enter и по клику на кнопку
 
     sendMessage($(this)); //вызов функции sendMessage и передать в нее форму
   });
@@ -68,6 +66,7 @@ $(document).ready(function () {
       $(this).siblings('.form-text').text("");
     }
   });
+  getTeam();
 });
 
 function isValidEmail(email) {
@@ -103,13 +102,28 @@ function sendMessage($form) {
   });
 
   if (valid) {
-    axios.get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text).then(function (resp) {
-      // console.log(resp);
-      // console.log(resp.status);
-      if (resp.status === 200) {
-        alert('ok');
-      } else {
-        alert('ne ok');
+    // axios
+    //     .get('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text)
+    //     .then((resp) => {
+    //         // console.log(resp);
+    //         // console.log(resp.status);
+    //         if (resp.status === 200) {
+    //             alert('ok');
+    //         } else {
+    //             alert('ne ok');
+    //         }
+    //     })
+    $.ajax({
+      url: 'https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + text,
+      type: 'get',
+      success: function success(resp) {
+        // console.log(resp.ok);
+        if (resp.ok == true) {
+          alert('ok');
+          $('#feedback_form').trigger('reset');
+        } else {
+          alert('ne ok');
+        }
       }
     });
   }
@@ -133,12 +147,12 @@ function getTeam() {
     success: function success(data) {
       var html = '';
       data.forEach(function (element) {
-        html += "\n            <li>\n            <div class=\"slider_item\">\n                <div class=\"null\">\n                    <div class=\"wrap_pic\">\n                        <img class=\"round\" src=\"assets/img/".concat(element.photo, ".png\" alt=\"#\">\n                    </div>\n                </div>\n                <div class=\"content\">\n                    <h3>").concat(element.name, "</h3>\n                    <h4>").concat(element.position, "</h4>\n                    <div class=\"wrap_socials\">\n                    \n                    <ul>\n                    ");
+        html += "\n            <li>\n            <div class=\"slider_item\">\n                <div class=\"null\">\n                <div class=\"wrap_pic\">\n                <img src=\"assets/img/".concat(element.photo, ".png\" alt=\"#\">\n                \n            </div>\n                </div>\n                <div class=\"content\">\n                    <h3>").concat(element.name, "</h3>\n                    <h4>").concat(element.position, "</h4>\n                    <div class=\"wrap_socials\">\n                    \n                    <ul>\n                    ");
 
         for (var i in element.social) {
           // console.log(data);
           // console.log(element.social);
-          console.log(element.social[i].title);
+          // console.log(element.social[i].title);
           html += "\n                    <li>\n                        <a href=\"".concat(element.social[i].href, "\" target=\"_blank\" rel=\"nofollow\" title=\"").concat(element.social[i].title, "\">\n                            <svg>\n                                <use xlink:href=\"assets/svg/sprite.svg#").concat(element.social[i].icon, "\"></use>\n                            </svg>\n                        </a>\n                    </li>\n                    ");
         }
 
