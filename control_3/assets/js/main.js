@@ -182,7 +182,7 @@ function getTeam() {
             <div class="slider_item">
                 <div class="null">
                 <div class="wrap_pic">
-                <img src="assets/img/${element.photo}.png" alt="#">
+                <img  data-src="assets/img/${element.photo}.png" alt="#">
                 
             </div>
                 </div>
@@ -219,25 +219,33 @@ function getTeam() {
                     `;
             });
             $(".one").html(html);
+            $(".one").html(html);
             const slider_team = $("#lightSlider_team").lightSlider({
                 item: 3,
                 slideMove: 1,
                 controls: false,
                 slideMargin: 30,
-                responsive: [
-                    {
-                        breakpoint: 900,
-                        settings: {
-                            item: 2
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            item: 1
-                        }
-                    }
-                ]
+                onSliderLoad: function (el) {
+                    var showActiveSlides = function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.src = entry.target.dataset.src;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    };
+
+                    var imageWidth = el.find(".wrap_pic").outerWidth() + "px";
+
+                    var observer = new window.IntersectionObserver(showActiveSlides, {
+                        root: el.parent()[0],
+                        rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+                    });
+
+                    el.find(".wrap_pic img").each(function () {
+                        observer.observe(this);
+                    });
+                }
 
             });
             $('#slider_prev_team').on('click', function () {
@@ -246,6 +254,7 @@ function getTeam() {
             $('#slider_next_team').on('click', function () {
                 slider_team.goToNextSlide()
             });
+
 
 
         }

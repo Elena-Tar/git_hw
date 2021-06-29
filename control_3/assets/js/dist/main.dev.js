@@ -147,7 +147,7 @@ function getTeam() {
     success: function success(data) {
       var html = '';
       data.forEach(function (element) {
-        html += "\n            <li>\n            <div class=\"slider_item\">\n                <div class=\"null\">\n                <div class=\"wrap_pic\">\n                <img src=\"assets/img/".concat(element.photo, ".png\" alt=\"#\">\n                \n            </div>\n                </div>\n                <div class=\"content\">\n                    <h3>").concat(element.name, "</h3>\n                    <h4>").concat(element.position, "</h4>\n                    <div class=\"wrap_socials\">\n                    \n                    <ul>\n                    ");
+        html += "\n            <li>\n            <div class=\"slider_item\">\n                <div class=\"null\">\n                <div class=\"wrap_pic\">\n                <img  data-src=\"assets/img/".concat(element.photo, ".png\" alt=\"#\">\n                \n            </div>\n                </div>\n                <div class=\"content\">\n                    <h3>").concat(element.name, "</h3>\n                    <h4>").concat(element.position, "</h4>\n                    <div class=\"wrap_socials\">\n                    \n                    <ul>\n                    ");
 
         for (var i in element.social) {
           // console.log(data);
@@ -159,22 +159,31 @@ function getTeam() {
         html += "\n                     \n                     </ul >\n                    </div >\n                </div >\n            </div >\n        </li >\n                    ";
       });
       $(".one").html(html);
+      $(".one").html(html);
       var slider_team = $("#lightSlider_team").lightSlider({
         item: 3,
         slideMove: 1,
         controls: false,
         slideMargin: 30,
-        responsive: [{
-          breakpoint: 900,
-          settings: {
-            item: 2
-          }
-        }, {
-          breakpoint: 600,
-          settings: {
-            item: 1
-          }
-        }]
+        onSliderLoad: function onSliderLoad(el) {
+          var showActiveSlides = function showActiveSlides(entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.src = entry.target.dataset.src;
+                observer.unobserve(entry.target);
+              }
+            });
+          };
+
+          var imageWidth = el.find(".wrap_pic").outerWidth() + "px";
+          var observer = new window.IntersectionObserver(showActiveSlides, {
+            root: el.parent()[0],
+            rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+          });
+          el.find(".wrap_pic img").each(function () {
+            observer.observe(this);
+          });
+        }
       });
       $('#slider_prev_team').on('click', function () {
         slider_team.goToPrevSlide();
