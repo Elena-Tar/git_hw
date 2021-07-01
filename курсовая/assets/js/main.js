@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 
     /*modal*/
-    $(".btn_hero").on('click', function (e) {                      //почему не работает, я хочу на всю кнопку нажимать
+    $(".btn_hero").on('click', function (e) {
         e.preventDefault();
         console.log($(this).children(".modal_link"));
         $('#my_modal').addClass("open");
